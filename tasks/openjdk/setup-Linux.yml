@@ -1,0 +1,25 @@
+---
+# tasks file for install openjdk for Linux
+
+- name: Update apt cache on Debian Family os
+  apt:
+    update_cache: yes
+  changed_when: false
+  when: ansible_os_family == "Debian"
+
+- name: Update emerge cache on Gentoo
+  shell: emerge-webrsync
+  changed_when: false
+  when: ansible_os_family == "Gentoo"
+
+- name: Install openjre on Linux
+  package:
+    name: "{{ openjre_package }}"
+    state: present
+  when: openjre_install == true
+
+- name: Install openjdk on Linux
+  package:
+    name: "{{ openjdk_package }}"
+    state: present
+  when: openjdk_install == true

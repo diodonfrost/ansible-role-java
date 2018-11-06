@@ -1,2 +1,8 @@
 ---
 # tasks file for ansible-role-java
+
+- name: Include OS specific variables.
+  include_vars: "{{ ansible_distribution }}.yml"
+
+- name: Install openjdk
+  include_tasks: "openjdk/setup-{{ ansible_system }}.yml"

@@ -1,0 +1,11 @@
+---
+openjre_package_version: "java-1.{{ java_version }}.0-openjdk"
+openjdk_package_version: "java-1.{{ java_version }}.0-openjdk-devel"
+
+openjre_package: '{{ "java-1.8.0-openjdk"
+                      if (java_version == "latest")
+                      else openjre_package_version }}'
+
+openjdk_package: '{{ "java-1.8.0-openjdk-devel"
+                      if (java_version == "latest")
+                      else openjdk_package_version }}'
