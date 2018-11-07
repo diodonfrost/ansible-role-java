@@ -1,0 +1,20 @@
+---
+# tasks file for install openjdk for OpenBSD
+
+- name: Install openjre on OpenBSD
+  package:
+    name: "{{ openjre_package }}"
+    state: present
+  when: openjre_install == true
+
+- name: Install openjdk on OpenBSD
+  package:
+    name: "{{ openjdk_package }}"
+    state: present
+  when: openjdk_install == true
+
+- name: Set Java binary in /usr/local
+  file:
+    src: /usr/local/jre-1.8.0/bin/java
+    dest: /usr/bin/java
+    state: link
