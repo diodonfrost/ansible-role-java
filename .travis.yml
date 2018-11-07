@@ -65,6 +65,33 @@ env:
 # Ubuntu
 #
 #--------------------------------
+  - distribution: ubuntu
+    version: "18.04"
+    playbook: openjdk-latest
+  - distribution: ubuntu
+    version: "18.04"
+    playbook: openjdk-11
+  - distribution: ubuntu
+    version: "18.04"
+    playbook: openjdk-8
+  - distribution: ubuntu
+    version: "16.04"
+    playbook: openjdk-latest
+  - distribution: ubuntu
+    version: "16.04"
+    playbook: openjdk-9
+  - distribution: ubuntu
+    version: "16.04"
+    playbook: openjdk-8
+  - distribution: ubuntu
+    version: "14.04"
+    playbook: openjdk-latest
+  - distribution: ubuntu
+    version: "14.04"
+    playbook: openjdk-7
+  - distribution: ubuntu
+    version: "16.04"
+    playbook: openjdk-6
 
 #--------------------------------
 #
