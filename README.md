@@ -70,23 +70,22 @@ This role has multiple variables. The defaults for all these variables are the f
 
 ```yaml
 ---
-  ---
-  # defaults file for ansible-role-java
+# defaults file for ansible-role-java
 
-  # Specify java version to install
-  # Depends on the operating system
-  # Accepted value: 6,7,8,9,11,latest
-  # latest take le last version of java supported by operating system
-  # Default latest
-  java_version: latest
+# Specify java version to install
+# Depends on the operating system
+# Accepted value: 6,7,8,9,11,latest
+# latest take latest version of java supported by operating system
+# Default latest
+java_version: latest
 
-  # Install java virtual machine
-  # Default is true
-  openjre_install: true
+# Install java virtual machine
+# Default is true
+openjre_install: true
 
-  # Install java virtual machine and developpement kit for java
-  # Default is false
-  openjdk_install: false
+# Install java virtual machine and development kit for java
+# Default is false
+openjdk_install: false
 ```
 
 ## Dependencies
