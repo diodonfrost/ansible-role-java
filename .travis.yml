@@ -56,12 +56,60 @@ env:
 # Oraclelinux
 #
 #--------------------------------
+  - distribution: oraclelinux
+    version: "7"
+    playbook: openjdk-latest
+  - distribution: oraclelinux
+    version: "7"
+    playbook: openjdk-11
+  - distribution: oraclelinux
+    version: "7"
+    playbook: openjdk-8
+  - distribution: oraclelinux
+    version: "7"
+    playbook: openjdk-7
+  - distribution: oraclelinux
+    version: "7"
+    playbook: openjdk-6
+  - distribution: oraclelinux
+    version: "6"
+    playbook: openjdk-latest
+  - distribution: oraclelinux
+    version: "6"
+    playbook: openjdk-8
+  - distribution: oraclelinux
+    version: "6"
+    playbook: openjdk-7
+  - distribution: oraclelinux
+    version: "6"
+    playbook: openjdk-6
 
 #--------------------------------
 #
 # Amazonlinux
 #
 #--------------------------------
+  - distribution: amazonlinux
+    version: "2"
+    playbook: openjdk-latest
+  - distribution: amazonlinux
+    version: "2"
+    playbook: openjdk-8
+  - distribution: amazonlinux
+    version: "2"
+    playbook: openjdk-7
+  - distribution: amazonlinux
+    version: "1"
+    playbook: openjdk-latest
+  - distribution: amazonlinux
+    version: "1"
+    playbook: openjdk-8
+  - distribution: amazonlinux
+    version: "1"
+    playbook: openjdk-7
+  - distribution: amazonlinux
+    version: "1"
+    playbook: openjdk-6
 
 #--------------------------------
 #
@@ -74,9 +122,6 @@ env:
 # Archlinux
 #
 #--------------------------------
-  - distribution: archlinux
-    version: "rolling"
-    playbook: puppet-agent-os-repository
 
 before_install:
   # Build docker container
