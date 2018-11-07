@@ -101,6 +101,7 @@ env:
   - distribution: ubuntu
     version: "12.04"
     playbook: openjdk-6
+
 #--------------------------------
 #
 # Debian
@@ -218,7 +219,6 @@ env:
     version: "13.2"
     playbook: openjdk-7
 
-
 #--------------------------------
 #
 # Archlinux
@@ -226,7 +226,7 @@ env:
 #--------------------------------
   - distribution: archlinux
     version: "rolling"
-    playbook: latest
+    playbook: openjdk-latest
   - distribution: archlinux
     version: "rolling"
     playbook: openjdk-11

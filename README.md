@@ -157,7 +157,39 @@ Apache 2
 
 ## Resources
 
-openjdk website: [https://openjdk.java.net/](https://openjdk.java.net/)
+Openjdk version compatibility operating system:
+
+| distribution | release | java_version  |
+|--------------| ------- |---------------|
+| CentOS       |    7    | 6, 7 & 8      |
+| CentOS       |    6    | 6, 7 & 8      |
+| Fedora       |   29    | 8 & 11        |
+| Fedora       |   28    | 8 & 11        |
+| Fedora       |   27    | 8 & 11        |
+| Fedora       |   26    | 8 &  9        |
+| Ubuntu       |  18.04  | 8 & 11        |
+| Ubuntu       |  16.04  | 8 & 9         |
+| Ubuntu       |  14.04  | 6 & 7         |
+| Ubuntu       |  12.04  | 6 & 7         |
+| Debian       |    9    | 8             |
+| Debian       |    8    | 8             |
+| Debian       |    7    | 6 & 7         |
+| Oraclelinux  |    7    | 6, 7, 8 & 11  |
+| Oraclelinux  |    6    | 6, 7 & 8      |
+| Amazonlinux  |    7    | 7 & 8         |
+| Amazonlinux  |    6    | 6, 7 & 8      |
+| Opensuse     |  42.3   | 7 & 8         |
+| Opensuse     |  42.2   | 7 & 8         |
+| Opensuse     |  42.1   | 7 & 8         |
+| Opensuse     |  13.2   | 7 & 8         |
+| SLES         |   15    | 8             |
+| SLES         |   13    | 8             |
+| SLES         |   12    | 8             |
+| Archlinux    | rolling | 7, 8, 10 & 11 |
+| Gentoo       | stage3  | 8             |
+| FreeBSD      | 11.3    | 6, 7 & 8      |
+| FreeBSD      | 10.4    | 6, 7 & 8      |
+
 
 ## Author Information
 
