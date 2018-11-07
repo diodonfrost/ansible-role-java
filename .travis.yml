@@ -90,7 +90,7 @@ env:
     version: "14.04"
     playbook: openjdk-7
   - distribution: ubuntu
-    version: "16.04"
+    version: "14.04"
     playbook: openjdk-6
 
 #--------------------------------
@@ -216,6 +216,21 @@ env:
 # Archlinux
 #
 #--------------------------------
+  - distribution: archlinux
+    version: "rolling"
+    playbook: latest
+  - distribution: archlinux
+    version: "rolling"
+    playbook: openjdk-11
+  - distribution: archlinux
+    version: "rolling"
+    playbook: openjdk-10
+  - distribution: archlinux
+    version: "rolling"
+    playbook: openjdk-8
+  - distribution: archlinux
+    version: "rolling"
+    playbook: openjdk-7
 
 before_install:
   # Build docker container

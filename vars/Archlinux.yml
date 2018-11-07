@@ -1,0 +1,12 @@
+---
+openjre_package: '{%- if java_version == "latest" -%}
+                     jre11-openjdk
+                  {%- else -%}
+                     jre{{ java_version }}-openjdk
+                  {%- endif -%}'
+
+openjdk_package: '{%- if java_version == "latest" -%}
+                     jdk11-openjdk
+                  {%- else -%}
+                     jdk{{ java_version }}-openjdk
+                  {%- endif -%}'
