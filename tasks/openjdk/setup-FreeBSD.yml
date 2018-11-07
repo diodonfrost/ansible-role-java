@@ -1,0 +1,14 @@
+---
+# tasks file for install openjdk for FreeBSD
+
+- name: Install openjre on FreeBSD
+  package:
+    name: "{{ openjre_package }}"
+    state: present
+  when: openjre_install == true
+
+- name: Install openjdk on FreeBSD
+  package:
+    name: "{{ openjdk_package }}"
+    state: present
+  when: openjdk_install == true
