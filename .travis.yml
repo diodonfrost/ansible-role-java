@@ -38,6 +38,27 @@ env:
 # Fedora
 #
 #--------------------------------
+  - distribution: fedora
+    version: "27"
+    playbook: openjdk-latest
+  - distribution: fedora
+    version: "27"
+    playbook: openjdk-11
+  - distribution: fedora
+    version: "27"
+    playbook: openjdk-9
+  - distribution: fedora
+    version: "27"
+    playbook: openjdk-8
+  - distribution: fedora
+    version: "26"
+    playbook: openjdk-latest
+  - distribution: fedora
+    version: "26"
+    playbook: openjdk-9
+  - distribution: fedora
+    version: "26"
+    playbook: openjdk-8
 
 #--------------------------------
 #
