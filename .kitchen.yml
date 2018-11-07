@@ -154,6 +154,9 @@ suites:
     provisioner:
       name: ansible_playbook
       playbook: tests/playbooks/openjdk-11.yml
+    include:
+      - oraclelinux-7
+      - fedora-27
 
   # Test openjdk-10
   - name: openjdk-10
@@ -166,6 +169,9 @@ suites:
     provisioner:
       name: ansible_playbook
       playbook: tests/playbooks/openjdk-9.yml
+    include:
+      - fedora-27
+      - fedora-26
 
   # Test openjdk-8
   - name: openjdk-8
@@ -178,9 +184,22 @@ suites:
     provisioner:
       name: ansible_playbook
       playbook: tests/playbooks/openjdk-7.yml
+    include:
+      - oraclelinux-7
+      - oraclelinux-6
+      - amazonlinux-2
+      - amazonlinux-1
+      - debian-8
+      - debian-7
 
   # Test openjdk-6
   - name: openjdk-6
     provisioner:
       name: ansible_playbook
       playbook: tests/playbooks/openjdk-6.yml
+    include:
+      - centos-7
+      - centos-6
+      - oraclelinux-7
+      - oraclelinux-6
+      - amazonlinux-1

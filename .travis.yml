@@ -71,6 +71,24 @@ env:
 # Debian
 #
 #--------------------------------
+  - distribution: debian
+    version: "9"
+    playbook: openjdk-latest
+  - distribution: debian
+    version: "9"
+    playbook: openjdk-8
+  - distribution: debian
+    version: "8"
+    playbook: openjdk-latest
+  - distribution: debian
+    version: "8"
+    playbook: openjdk-7
+  - distribution: debian
+    version: "7"
+    playbook: openjdk-latest
+  - distribution: debian
+    version: "7"
+    playbook: openjdk-7
 
 #--------------------------------
 #
