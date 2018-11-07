@@ -1,38 +1,164 @@
-Role Name
-=========
+# ansible-role-java
 
-A brief description of the role goes here.
+[![Ansible Galaxy](https://img.shields.io/badge/galaxy-diodonfrost.java-660198.svg)](https://galaxy.ansible.com/diodonfrost/java)
+[![Build Status](https://travis-ci.org/diodonfrost/ansible-role-java.svg?branch=master)](https://travis-ci.org/diodonfrost/ansible-role-java)
 
-Requirements
-------------
+This role provide a compliance for install java on your target host.
 
-Any pre-requisites that may not be covered by Ansible itself or the role should be mentioned here. For instance, if the role uses the EC2 module, it may be a good idea to mention in this section that the boto package is required.
+## Requirements
 
-Role Variables
---------------
+This role was developed using Ansible 2.4 Backwards compatibility is not guaranteed.
+Use `ansible-galaxy install diodonfrost.java` to install the role on your system.
 
-A description of the settable variables for this role should go here, including any variables that are in defaults/main.yml, vars/main.yml, and any variables that can/should be set via parameters to the role. Any variables that are read from other roles and/or the global scope (ie. hostvars, group vars, etc.) should be mentioned here as well.
+Supported platforms:
 
-Dependencies
-------------
+```yaml
+- name: EL
+  versions:
+    - 7
+    - 6
+- name: Fedora
+  versions:
+    - 29
+    - 28
+    - 27
+    - 26
+- name: Debian
+  versions:
+    - stretch
+    - jessie
+    - wheezy
+- name: Ubuntu
+  versions:
+    - bionic
+    - xenial
+    - trusty
+    - precise
+- name: OracleLinux
+  versions:
+    - 7
+    - 6
+- name: opensuse
+  versions:
+    - 42.3
+    - 42.2
+    - 42.1
+    - 13.2
+- name: SLES
+  versions:
+    - 11
+    - 12
+    - 15
+- name: ArchLinux
+  versions:
+    - any
+- name: Gentoo
+  versions:
+    - stage3
+- name: FreeBSD
+  versions:
+    - 11.2
+    - 10.4
+    - 10.3
+- name: OpenBSD
+  versions:
+    - 6.0
+```
+## Role Variables
 
-A list of other roles hosted on Galaxy should go here, plus any details in regards to parameters that may need to be set for other roles, or variables that are used from other roles.
+This role has multiple variables. The defaults for all these variables are the following:
 
-Example Playbook
-----------------
+```yaml
+---
+  ---
+  # defaults file for ansible-role-java
 
-Including an example of how to use your role (for instance, with variables passed in as parameters) is always nice for users too:
+  # Specify java version to install
+  # Depends on the operating system
+  # Accepted value: 6,7,8,9,11,latest
+  # latest take le last version of java supported by operating system
+  # Default latest
+  java_version: latest
 
-    - hosts: servers
-      roles:
-         - { role: username.rolename, x: 42 }
+  # Install java virtual machine
+  # Default is true
+  openjre_install: true
 
-License
--------
+  # Install java virtual machine and developpement kit for java
+  # Default is false
+  openjdk_install: false
+```
 
-BSD
+## Dependencies
 
-Author Information
-------------------
+None
 
-An optional section for the role authors to include contact information, or a website (HTML is not allowed).
+## Example Playbook
+
+This is a sample playbook file for deploying the Ansible Galaxy java role in a localhost and installing openjdk-jre.
+
+```yaml
+---
+- hosts: localhost
+  become: true
+  roles:
+    - role: diodonfrost.java
+```
+
+## Local Testing
+
+The preferred way of locally testing the role is to use Docker. You will have to install Docker on your system.
+
+You can also use vagrant and Virtualbox with vagrant to run tests locally. You will have to install Virtualbox and Vagrant on your system. For all our tests we use test-kitchen.
+
+Next install test-kitchen:
+
+```shell
+# Install dependencies
+gem install bundler
+bundle install
+```
+
+### Testing with Docker
+
+```shell
+# List all tests with kitchen
+kitchen list
+
+# fast test on one machine
+kitchen test mariadb-103-centos-7
+
+# test on all machines
+kitchen test
+
+# for development, create environment
+kitchen create default-centos-7
+
+# Apply ansible playbook
+kitchen converge default-centos-7
+
+# Apply inspec tests
+kitchen verify default-centos-7
+```
+
+### Testing with Virtualbox
+
+```shell
+# Specify kitchen file on Linux
+export KITCHEN_YAML=.kitchen-vagrant.yml
+
+# fast test on one machine
+kitchen test os-packaging-freebsd-112
+```
+
+## License
+
+Apache 2
+
+## Resources
+
+openjdk website: [https://openjdk.java.net/](https://openjdk.java.net/)
+
+## Author Information
+
+This role was created in 2018 by diodonfrost.
