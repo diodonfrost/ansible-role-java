@@ -63,6 +63,9 @@ Supported platforms:
 - name: OpenBSD
   versions:
     - 6.0
+- name: Solaris
+  versions:
+    - 11.0
 ```
 ## Role Variables
 
@@ -149,6 +152,31 @@ export KITCHEN_YAML=.kitchen-vagrant.yml
 # fast test on one machine
 kitchen test os-packaging-freebsd-112
 ```
+### Testing Solaris with Virtualbox
+
+Solaris can only be test with Virtualbox provider,do not use 'kitchen test' command for testing Solaris environment. There 4 major commands you will be using with test-kitchen as part of your workflow.
+
+First of all we must set the kitchen file:
+```shell
+# For testing Solaris
+export KITCHEN_YAML=.kitchen-solaris.yml
+```
+
+Provision the virtual machines, a Linux machine to run Ansible and Solaris machines to apply playbook again:
+```shell
+# deploy machines
+kitchen create
+```
+
+Finaly launch inspec tests:
+```shell
+kitchen verify
+```
+
+For cleaning environment use:
+```shell
+kitchen destroy
+```
 
 ## License
 
@@ -188,6 +216,8 @@ Openjdk version compatibility operating system:
 | Gentoo       | stage3  | 8             |
 | FreeBSD      | 11.3    | 6, 7 & 8      |
 | FreeBSD      | 10.4    | 6, 7 & 8      |
+| OpenBSD      |  6.x    | 8             |
+| Solaris      |   11    | 6, 7 ,8       |
 
 
 ## Author Information
