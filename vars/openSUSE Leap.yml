@@ -1,0 +1,14 @@
+---
+# Define java version to use
+openjre_package: '{%- if java_version == "latest" -%}
+                     java-1_8_0-openjdk
+                  {%- else -%}
+                     java-1_{{ java_version }}_0-openjdk
+                  {%- endif -%}'
+
+# Define java version to use
+openjdk_package: '{%- if java_version == "latest" -%}
+                     java-1_8_0-openjdk-devel
+                  {%- else -%}
+                     java-1_{{ java_version }}_0-openjdk-devel
+                  {%- endif -%}'

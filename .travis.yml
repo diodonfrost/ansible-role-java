@@ -182,6 +182,34 @@ env:
 # Opensuse
 #
 #--------------------------------
+  - distribution: opensuse
+    version: "42.3"
+    playbook: openjdk-latest
+  - distribution: opensuse
+    version: "42.3"
+    playbook: openjdk-8
+  - distribution: opensuse
+    version: "42.3"
+    playbook: openjdk-7
+  - distribution: opensuse
+    version: "42.2"
+    playbook: openjdk-latest
+  - distribution: opensuse
+    version: "42.2"
+    playbook: openjdk-8
+  - distribution: opensuse
+    version: "42.2"
+    playbook: openjdk-7
+  - distribution: opensuse
+    version: "13.2"
+    playbook: openjdk-latest
+  - distribution: opensuse
+    version: "13.2"
+    playbook: openjdk-8
+  - distribution: opensuse
+    version: "13.2"
+    playbook: openjdk-7
+
 
 #--------------------------------
 #

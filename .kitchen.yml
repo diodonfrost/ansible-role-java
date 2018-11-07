@@ -196,6 +196,9 @@ suites:
       - debian-8
       - debian-7
       - ubuntu-14.04
+      - opensuse-42.3
+      - opensuse-42.2
+      - opensuse-13.2
 
   # Test openjdk-6
   - name: openjdk-6
