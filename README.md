@@ -1,7 +1,7 @@
 # ansible-role-java
 
-[![Ansible Galaxy](https://img.shields.io/badge/galaxy-diodonfrost.java-660198.svg)](https://galaxy.ansible.com/diodonfrost/java)
 [![Build Status](https://travis-ci.org/diodonfrost/ansible-role-java.svg?branch=master)](https://travis-ci.org/diodonfrost/ansible-role-java)
+[![Ansible Galaxy](https://img.shields.io/badge/galaxy-diodonfrost.java-660198.svg)](https://galaxy.ansible.com/diodonfrost/java)
 
 This role provide a compliance for install java on your target host.
 
@@ -17,6 +17,7 @@ Supported platforms:
   versions:
     - 7
     - 6
+    - 5
 - name: Fedora
   versions:
     - 29
@@ -28,22 +29,24 @@ Supported platforms:
     - stretch
     - jessie
     - wheezy
+    - squeeze
 - name: Ubuntu
   versions:
     - bionic
     - xenial
     - trusty
     - precise
+    - trusty
 - name: OracleLinux
   versions:
     - 7
     - 6
 - name: opensuse
   versions:
-    - 42.3
-    - 42.2
-    - 42.1
     - 13.2
+    - 42.1
+    - 42.2
+    - 42.3
 - name: SLES
   versions:
     - 11
@@ -63,10 +66,18 @@ Supported platforms:
 - name: OpenBSD
   versions:
     - 6.0
+    - 6.4
 - name: Solaris
   versions:
     - 11.0
+- name: MacOSX
+  versions:
+    - 10.10
+    - 10.11
+    - 10.12
+    - 10.13
 ```
+
 ## Role Variables
 
 This role has multiple variables. The defaults for all these variables are the following:
@@ -218,7 +229,7 @@ Openjdk version compatibility operating system:
 | FreeBSD      | 10.4    | 6, 7 & 8      |
 | OpenBSD      |  6.x    | 8             |
 | Solaris      |   11    | 6, 7 ,8       |
-
+| Macosx       |  10.x   | 8, 9, 11      |
 
 ## Author Information
 

@@ -94,7 +94,7 @@ platforms:
       ansible_binary_path: /usr/local/bin/
   - name: macosx-10.10
     driver:
-      box: jhcook/osx-elcapitan-10.10
+      box: jhcook/osx-yosemite-10.10
       provision: true
     provisioner:
       name: ansible_playbook
@@ -112,19 +112,21 @@ suites:
     provisioner:
       name: ansible_playbook
       playbook: tests/playbooks/openjdk-11.yml
-    include:
+    includes:
       - oraclelinux-7
       - fedora-27
       - ubuntu-18.04
       - archlinux-rolling
       - gentoo
+      - macosx-10.11
+      - macosx-10.10
 
   # Test openjdk-10
   - name: openjdk-10
     provisioner:
       name: ansible_playbook
       playbook: tests/playbooks/openjdk-10.yml
-    include:
+    includes:
       - archlinux-rolling
 
   # Test openjdk-9
@@ -132,18 +134,20 @@ suites:
     provisioner:
       name: ansible_playbook
       playbook: tests/playbooks/openjdk-9.yml
-    include:
+    includes:
       - fedora-27
       - fedora-26
       - ubuntu-16.04
       - gentoo
+      - macosx-10.11
+      - macosx-10.10
 
   # Test openjdk-8
   - name: openjdk-8
     provisioner:
       name: ansible_playbook
       playbook: tests/playbooks/openjdk-8.yml
-    exclude:
+    excludes:
       - ubuntu-14.04
 
   # Test openjdk-7
@@ -151,7 +155,7 @@ suites:
     provisioner:
       name: ansible_playbook
       playbook: tests/playbooks/openjdk-7.yml
-    include:
+    includes:
       - oraclelinux-7
       - oraclelinux-6
       - amazonlinux-2
@@ -169,7 +173,7 @@ suites:
     provisioner:
       name: ansible_playbook
       playbook: tests/playbooks/openjdk-6.yml
-    include:
+    includes:
       - centos-7
       - centos-6
       - oraclelinux-7

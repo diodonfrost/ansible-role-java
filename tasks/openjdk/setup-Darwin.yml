@@ -1,0 +1,23 @@
+---
+# tasks file for install openjdk for Macosx
+
+- name: List users on macosx
+  shell: ls -1 /Users/ |grep -v Shared |grep -v .localized
+  register: list_users
+  changed_when: false
+
+- name: Adoptopenjdk homebrew repository
+  homebrew_tap:
+    name: AdoptOpenJDK/openjdk
+    state: present
+  become: yes
+  become_user: "{{ item }}"
+  with_items: "{{ list_users.stdout_lines }}"
+
+- name: Install openjdk on Macosx
+  homebrew_cask:
+    name: "{{ openjdk_package }}"
+    state: present
+  become: yes
+  become_user: "{{ item }}"
+  with_items: "{{ list_users.stdout_lines }}"
