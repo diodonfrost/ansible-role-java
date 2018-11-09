@@ -1,0 +1,11 @@
+---
+# tasks file for install openjdk for Windows
+
+- name: Install openjdk on Windows
+  win_chocolatey:
+    name: openjdk
+    state: present
+
+- name: Ensure java is on the glboal path
+  win_path:
+    elements: 'C:\Program Files\OpenJDK\jdk-11.0.1\bin'
