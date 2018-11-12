@@ -28,14 +28,44 @@ platforms:
       name: shell
       command: echo 'Skipping Verify'
 
-  # Target Windows 2012 R2 to test
-  - name: windows-2012R2
+  # Target Windows 2016 to test
+  - name: windows-2k16
     driver:
-      box: opentable/win-2012r2-standard-amd64-nocm
+      box: diodonfrost/windows-2k16
       provision: true
       communicator: winrm
       network:
         - [ 'private_network', { ip: '172.28.128.11' } ]
+      customize:
+        memory: 2048
+      vagrantfiles:
+        - tests/vagrant/vagrant_windows_target.rb
+    transport:
+      name: winrm
+
+  # Target Windows 2012 R2 to test
+  - name: windows-2k12r2
+    driver:
+      box: diodonfrost/windows-2k12r2
+      provision: true
+      communicator: winrm
+      network:
+        - [ 'private_network', { ip: '172.28.128.12' } ]
+      customize:
+        memory: 2048
+      vagrantfiles:
+        - tests/vagrant/vagrant_windows_target.rb
+    transport:
+      name: winrm
+
+  # Target Windows 2008 R2 to test
+  - name: windows-2k8r2
+    driver:
+      box: diodonfrost/windows-2k8r2
+      provision: true
+      communicator: winrm
+      network:
+        - [ 'private_network', { ip: '172.28.128.13' } ]
       customize:
         memory: 2048
       vagrantfiles:

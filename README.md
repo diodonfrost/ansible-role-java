@@ -78,7 +78,9 @@ Supported platforms:
     - 10.13
 - name: Windows
   versions:
+    - 2016
     - 2012R2
+    - 2008R2
 ```
 
 ## Role Variables
