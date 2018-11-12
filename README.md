@@ -76,6 +76,9 @@ Supported platforms:
     - 10.11
     - 10.12
     - 10.13
+- name: Windows
+  versions:
+    - 2012R2
 ```
 
 ## Role Variables
@@ -163,20 +166,26 @@ export KITCHEN_YAML=.kitchen-vagrant.yml
 # fast test on one machine
 kitchen test os-packaging-freebsd-112
 ```
-### Testing Solaris with Virtualbox
+### Testing Windows and Solaris with Virtualbox
 
-Solaris can only be test with Virtualbox provider,do not use 'kitchen test' command for testing Solaris environment. There 4 major commands you will be using with test-kitchen as part of your workflow.
+Windows and Solaris can only be test with Virtualbox provider,do not use 'kitchen test' command for testing Windows and Solaris environment. There 4 steps you will be using with test-kitchen as part of your workflow.
 
 First of all we must set the kitchen file:
 ```shell
+# For testing Windows
+export KITCHEN_YAML=.kitchen-windows.yml
+
 # For testing Solaris
 export KITCHEN_YAML=.kitchen-solaris.yml
 ```
 
-Provision the virtual machines, a Linux machine to run Ansible and Solaris machines to apply playbook again:
+Provision the virtual machines, a Linux machine to run Ansible and Windows/Solaris machines to apply playbook again:
 ```shell
 # deploy machines
 kitchen create
+
+# Launch playbook
+kitchen converge
 ```
 
 Finaly launch inspec tests:
@@ -230,6 +239,7 @@ Openjdk version compatibility operating system:
 | OpenBSD      |  6.x    | 8             |
 | Solaris      |   11    | 6, 7 ,8       |
 | Macosx       |  10.x   | 8, 9, 11      |
+| Windows      | 2k12r2  | 11            |
 
 ## Author Information
 
