@@ -75,6 +75,7 @@ galaxy_info:
         - 2016
         - 2012R2
         - 2008R2
+        - 8.1
 
   galaxy_tags:
     - system

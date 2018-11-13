@@ -81,6 +81,7 @@ Supported platforms:
     - 2016
     - 2012R2
     - 2008R2
+    - 8.1
 ```
 
 ## Role Variables
@@ -241,7 +242,10 @@ Openjdk version compatibility operating system:
 | OpenBSD      |  6.x    | 8             |
 | Solaris      |   11    | 6, 7 ,8       |
 | Macosx       |  10.x   | 8, 9, 11      |
+| Windows      | 2k16    | 11            |
 | Windows      | 2k12r2  | 11            |
+| Windows      | 2k8r2   | 11            |
+| Windows      |  8.1    | 11            |
 
 ## Author Information
 
