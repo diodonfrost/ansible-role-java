@@ -1,14 +1,42 @@
 ---
 # tasks file for install openjdk for Solaris
 
-- name: Install openjre on Solaris
-  package:
-    name: "{{ openjre_package }}"
-    state: present
-  when: openjre_install == true
+- name: Install java on Solaris 11
+  block:
 
-- name: Install openjdk on Solaris
-  package:
-    name: "{{ openjdk_package }}"
-    state: present
-  when: openjdk_install == true
+  - name: Install openjre on Solaris 11
+    package:
+      name: "{{ openjre_package }}"
+      state: present
+    when: openjre_install == true
+
+  - name: Install openjdk on Solaris 11
+    package:
+      name: "{{ openjdk_package }}"
+      state: present
+    when: openjdk_install == true
+
+  when: ansible_distribution_version|int >= 11
+
+- name: Install java on Solaris 10
+  block:
+
+  - name: Install openjre on Solaris 10
+    pkgutil:
+      name: "{{ openjre_package }}"
+      state: present
+    when: openjre_install == true
+
+  - name: Install openjdk on Solaris 11
+    pkgutil:
+      name: "{{ openjdk_package }}"
+      state: present
+    when: openjdk_install == true
+
+  - name: Add java binary to path
+    file:
+      src: "/opt/csw/java/jre/jre{{ java_version }}/bin/java"
+      dest: "/bin/java"
+      state: link
+
+  when: ansible_distribution_version|int < 11 

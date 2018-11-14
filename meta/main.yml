@@ -63,6 +63,7 @@ galaxy_info:
         - 6.4
     - name: Solaris
       versions:
+        - 10
         - 11.0
     - name: MacOSX
       versions:

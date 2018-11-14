@@ -59,5 +59,28 @@ platforms:
     provisioner:
       name: shell
 
+# Test on Solaris 10
+  - name: solaris-10-java-8
+    driver:
+      box: diodonfrost/solaris-10.11
+      provision: false
+      network:
+        - [ 'private_network', { ip: '172.28.128.14' } ]
+      vagrantfiles:
+        - tests/vagrant/vagrant_solaris_target.rb
+    provisioner:
+      name: shell
+
+  - name: solaris-10-java-7
+    driver:
+      box: diodonfrost/solaris-10.11
+      provision: false
+      network:
+        - [ 'private_network', { ip: '172.28.128.15' } ]
+      vagrantfiles:
+        - tests/vagrant/vagrant_solaris_target.rb
+    provisioner:
+      name: shell
+
 suites:
   - name: default

@@ -1,6 +1,6 @@
 ---
 - name: ansible-role-java-8
-  hosts: 172.28.128.11
+  hosts: java-8
   remote_user: root
   become: yes
   roles:
@@ -9,7 +9,7 @@
     java_version: 8
 
 - name: ansible-role-java-7
-  hosts: 172.28.128.12
+  hosts: java-7
   remote_user: root
   become: yes
   roles:
@@ -18,7 +18,7 @@
     java_version: 7
 
 - name: ansible-role-java-6
-  hosts: 172.28.128.13
+  hosts: java-6
   remote_user: root
   become: yes
   roles:

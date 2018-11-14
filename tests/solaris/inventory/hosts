@@ -1,4 +1,10 @@
-[solaris-machines]
+[java-8]
 172.28.128.11 ansible_user=vagrant ansible_password=v@grant
+172.28.128.14 ansible_user=vagrant ansible_password=vagrant
+
+[java-7]
 172.28.128.12 ansible_user=vagrant ansible_password=v@grant
+172.28.128.15 ansible_user=vagrant ansible_password=vagrant
+
+[java-6]
 172.28.128.13 ansible_user=vagrant ansible_password=v@grant

@@ -69,6 +69,7 @@ Supported platforms:
     - 6.4
 - name: Solaris
   versions:
+    - 10
     - 11.0
 - name: MacOSX
   versions:
@@ -241,6 +242,7 @@ Openjdk version compatibility operating system:
 | FreeBSD      | 10.4    | 6, 7 & 8      |
 | OpenBSD      |  6.x    | 8             |
 | Solaris      |   11    | 6, 7 ,8       |
+| Solaris      |   10    | 7, 8          |
 | Macosx       |  10.x   | 8, 9, 11      |
 | Windows      | 2k16    | 11            |
 | Windows      | 2k12r2  | 11            |
