@@ -1,6 +1,7 @@
 galaxy_info:
   role_name: java
   author: diodonfrost
+  company: diodonfrost
   description: Ansible role for manage openjdk and java oracle on a large number of os
   license: license Apache
 
