@@ -41,6 +41,11 @@ Supported platforms:
   versions:
     - 7
     - 6
+- name: Amazon
+  versions:
+    - 2017.12
+    - 2016.03
+    - 2013.09
 - name: opensuse
   versions:
     - 13.2
