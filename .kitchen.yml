@@ -65,7 +65,7 @@ platforms:
       provision_command: apt-get install -y init
       run_command: /sbin/init
       platform: ubuntu
-  - name: ubuntu-14.04-ansible
+  - name: ubuntu-14.04
     driver:
       image: diodonfrost/ubuntu-14.04-ansible
       platform: ubuntu
