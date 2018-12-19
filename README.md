@@ -151,7 +151,7 @@ bundle install
 kitchen list
 
 # fast test on one machine
-kitchen test mariadb-103-centos-7
+kitchen test default-centos-7
 
 # test on all machines
 kitchen test
