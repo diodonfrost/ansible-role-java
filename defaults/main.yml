@@ -2,7 +2,7 @@
 
 # Specify java version to install
 # Depends on the operating system
-# Accepted value: 6,7,8,9,11,latest
+# Accepted value: 6,7,8,9,10,11,latest
 # latest take latest version of java supported by operating system
 # Default latest
 java_version: latest
