@@ -7,6 +7,12 @@
   changed_when: false
   when: ansible_os_family == "Debian"
 
+- name: Update pacman cache on Archlinux
+  pacman:
+    update_cache: yes
+  changed_when: false
+  when: ansible_os_family == "Archlinux"
+
 - name: Update emerge cache on Gentoo
   shell: emerge-webrsync
   changed_when: false
