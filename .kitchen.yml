@@ -117,6 +117,22 @@ platforms:
       platform: centos
 
   # Opensuse
+  - name: opensuse-15.1
+    driver:
+      image: diodonfrost/opensuse-15.1-ansible
+      run_command: /usr/lib/systemd/systemd
+      platform: opensuse
+      provision_command:
+        - sed -i 's/UsePAM yes/UsePAM no/g' /etc/ssh/sshd_config
+        - systemctl enable sshd
+  - name: opensuse-15
+    driver:
+      image: diodonfrost/opensuse-15-ansible
+      run_command: /usr/lib/systemd/systemd
+      platform: opensuse
+      provision_command:
+        - sed -i 's/UsePAM yes/UsePAM no/g' /etc/ssh/sshd_config
+        - systemctl enable sshd
   - name: opensuse-42.3
     driver:
       image: diodonfrost/opensuse-42.3-ansible
@@ -169,6 +185,8 @@ suites:
       - fedora-27
       - ubuntu-18.04
       - archlinux-rolling
+      - opensuse-15.1
+      - opensuse-15
 
   # Test openjdk-10
   - name: openjdk-10
@@ -177,6 +195,8 @@ suites:
       playbook: tests/playbooks/openjdk-10.yml
     includes:
       - archlinux-rolling
+      - opensuse-15.1
+      - opensuse-15
 
   # Test openjdk-9
   - name: openjdk-9
