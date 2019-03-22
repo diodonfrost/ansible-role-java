@@ -48,15 +48,16 @@ Supported platforms:
     - 2013.09
 - name: opensuse
   versions:
-    - 13.2
-    - 42.1
-    - 42.2
+    - 15.1
+    - 15
     - 42.3
+    - 42.2
+    - 42.1
+    - 13.2
 - name: SLES
   versions:
     - 11
     - 12
-    - 15
 - name: ArchLinux
   versions:
     - any
@@ -234,6 +235,7 @@ Openjdk version compatibility operating system:
 | Oraclelinux  |    6    | 6, 7 & 8      |
 | Amazonlinux  |    7    | 7 & 8         |
 | Amazonlinux  |    6    | 6, 7 & 8      |
+| Opensuse     |   15    | 8, 10 & 11    |
 | Opensuse     |  42.3   | 7 & 8         |
 | Opensuse     |  42.2   | 7 & 8         |
 | Opensuse     |  42.1   | 7 & 8         |
