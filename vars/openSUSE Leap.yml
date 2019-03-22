@@ -4,8 +4,8 @@ openjre_package: '{%- if java_version == "latest" and ansible_distribution_major
                      java-1_8_0-openjdk
                   {%- elif java_version == "latest" and ansible_distribution_version|int >= 15 -%}
                      java-11-openjdk
-                  {%- elif java_version == 8 -%}
-                     java-1_8_0-openjdk
+                  {%- elif java_version <= 8 -%}
+                     java-1_{{ java_version }}_0-openjdk
                   {%- else -%}
                      java-{{ java_version }}-openjdk
                   {%- endif -%}'
@@ -15,8 +15,8 @@ openjdk_package: '{%- if java_version == "latest" and ansible_distribution_major
                      java-1_8_0-openjdk-devel
                   {%- elif java_version == "latest" and ansible_distribution_version|int >= 15 -%}
                      java-11-openjdk-devel
-                  {%- elif java_version == 8 -%}
-                     java-1_8_0-openjdk-devel
+                  {%- elif java_version <= 8 -%}
+                     java-1_{{ java_version }}_0-openjdk-devel
                   {%- else -%}
                      java-{{ java_version }}-openjdk-devel
                   {%- endif -%}'
