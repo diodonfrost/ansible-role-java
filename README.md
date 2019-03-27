@@ -32,6 +32,7 @@ Supported platforms:
     - squeeze
 - name: Ubuntu
   versions:
+    - disco
     - bionic
     - xenial
     - trusty
@@ -224,6 +225,7 @@ Openjdk version compatibility operating system:
 | Fedora       |   28    | 8 & 11        |
 | Fedora       |   27    | 8 & 11        |
 | Fedora       |   26    | 8 &  9        |
+| Ubuntu       |  19.04  | 8,11,12 & 13  |
 | Ubuntu       |  18.04  | 8 & 11        |
 | Ubuntu       |  16.04  | 8 & 9         |
 | Ubuntu       |  14.04  | 6 & 7         |
