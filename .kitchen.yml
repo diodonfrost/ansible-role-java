@@ -53,6 +53,12 @@ platforms:
         - sed -i 's/UsePAM yes/UsePAM no/g' /etc/ssh/sshd_config
 
   # Ubuntu
+  - name: ubuntu-19.04
+    driver:
+      image: diodonfrost/ubuntu-19.04-ansible
+      provision_command: apt-get install -y init
+      run_command: /sbin/init
+      platform: ubuntu
   - name: ubuntu-18.04
     driver:
       image: diodonfrost/ubuntu-18.04-ansible
@@ -174,6 +180,22 @@ suites:
     provisioner:
       name: ansible_playbook
       playbook: tests/playbooks/openjdk-latest.yml
+
+  # Test openjdk-13
+  - name: openjdk-13
+    provisioner:
+      name: ansible_playbook
+      playbook: tests/playbooks/openjdk-13.yml
+    includes:
+      - ubuntu-19.04
+
+  # Test openjdk-12
+  - name: openjdk-12
+    provisioner:
+      name: ansible_playbook
+      playbook: tests/playbooks/openjdk-12.yml
+    includes:
+      - ubuntu-19.04
 
   # Test openjdk-11
   - name: openjdk-11
