@@ -279,6 +279,21 @@ env:
     version: "rolling"
     playbook: openjdk-7
 
+#--------------------------------
+#
+# Alpine
+#
+#--------------------------------
+  - distribution: alpine
+    version: "rolling"
+    playbook: openjdk-latest
+  - distribution: alpine
+    version: "rolling"
+    playbook: openjdk-8
+  - distribution: alpine
+    version: "rolling"
+    playbook: openjdk-7
+
 before_install:
   # Build docker container
   - 'sudo docker pull diodonfrost/${distribution}-${version}-ansible:latest'
