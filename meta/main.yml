@@ -27,6 +27,7 @@ galaxy_info:
         - squeeze
     - name: Ubuntu
       versions:
+        - disco
         - bionic
         - xenial
         - trusty
@@ -54,6 +55,9 @@ galaxy_info:
         - 11
         - 12
     - name: ArchLinux
+      versions:
+        - any
+    - name: Alpine
       versions:
         - any
     - name: Gentoo
