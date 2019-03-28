@@ -62,6 +62,9 @@ Supported platforms:
 - name: ArchLinux
   versions:
     - any
+- name: Alpine
+  versions:
+    - any
 - name: Gentoo
   versions:
     - stage3
