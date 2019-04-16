@@ -14,8 +14,7 @@
   when: ansible_os_family == "Archlinux"
 
 - name: Update emerge cache on Opensuse
-  zypper:
-    update_cache: yes
+  shell: zypper refresh
   changed_when: false
   when: ansible_os_family == "Suse"
 
