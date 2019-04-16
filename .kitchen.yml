@@ -237,6 +237,7 @@ suites:
       playbook: tests/playbooks/openjdk-8.yml
     excludes:
       - ubuntu-14.04
+      - ubuntu-19.04
 
   # Test openjdk-7
   - name: openjdk-7
