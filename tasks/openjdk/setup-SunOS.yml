@@ -8,13 +8,13 @@
     package:
       name: "{{ openjre_package }}"
       state: present
-    when: openjre_install == true
+    when: openjre_install
 
   - name: Install openjdk on Solaris 11
     package:
       name: "{{ openjdk_package }}"
       state: present
-    when: openjdk_install == true
+    when: openjdk_install
 
   when: ansible_distribution_version|int >= 11
 
@@ -25,13 +25,13 @@
     pkgutil:
       name: "{{ openjre_package }}"
       state: present
-    when: openjre_install == true
+    when: openjre_install
 
   - name: Install openjdk on Solaris 11
     pkgutil:
       name: "{{ openjdk_package }}"
       state: present
-    when: openjdk_install == true
+    when: openjdk_install
 
   - name: Add java binary to path
     file:
@@ -39,4 +39,4 @@
       dest: "/bin/java"
       state: link
 
-  when: ansible_distribution_version|int < 11 
+  when: ansible_distribution_version|int < 11

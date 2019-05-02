@@ -5,10 +5,10 @@
   package:
     name: "{{ openjre_package }}"
     state: present
-  when: openjre_install == true
+  when: openjre_install
 
 - name: Install openjdk on FreeBSD
   package:
     name: "{{ openjdk_package }}"
     state: present
-  when: openjdk_install == true
+  when: openjdk_install

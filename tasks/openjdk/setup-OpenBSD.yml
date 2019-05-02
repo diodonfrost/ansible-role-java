@@ -5,13 +5,13 @@
   package:
     name: "{{ openjre_package }}"
     state: present
-  when: openjre_install == true
+  when: openjre_install
 
 - name: Install openjdk on OpenBSD
   package:
     name: "{{ openjdk_package }}"
     state: present
-  when: openjdk_install == true
+  when: openjdk_install
 
 - name: Set Java binary in /usr/local
   file:
