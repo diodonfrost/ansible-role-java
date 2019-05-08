@@ -20,6 +20,8 @@ Supported platforms:
     - 5
 - name: Fedora
   versions:
+    - 31
+    - 30
     - 29
     - 28
     - 27
@@ -224,6 +226,8 @@ Openjdk version compatibility operating system:
 |--------------| ------- |---------------|
 | CentOS       |    7    | 6, 7 & 8      |
 | CentOS       |    6    | 6, 7 & 8      |
+| Fedora       |   31    | 8, 11 & 12    |
+| Fedora       |   30    | 8, 11 & 12    |
 | Fedora       |   29    | 8 & 11        |
 | Fedora       |   28    | 8 & 11        |
 | Fedora       |   27    | 8 & 11        |
