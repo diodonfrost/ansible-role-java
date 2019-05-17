@@ -1,19 +1,19 @@
 ---
 # tasks file for install openjdk for OpenBSD
 
-- name: Install openjre on OpenBSD
+- name: OpenBSD | Install openjre
   package:
     name: "{{ openjre_package }}"
     state: present
   when: openjre_install
 
-- name: Install openjdk on OpenBSD
+- name: OpenBSD | Install openjdk
   package:
     name: "{{ openjdk_package }}"
     state: present
   when: openjdk_install
 
-- name: Set Java binary in /usr/local
+- name: OpenBSD | Set Java binary in /usr/local
   file:
     src: /usr/local/jre-1.8.0/bin/java
     dest: /usr/bin/java

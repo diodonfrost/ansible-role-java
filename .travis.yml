@@ -39,6 +39,48 @@ env:
 #
 #--------------------------------
   - distribution: fedora
+    version: "31"
+    playbook: openjdk-latest
+  - distribution: fedora
+    version: "31"
+    playbook: openjdk-12
+  - distribution: fedora
+    version: "31"
+    playbook: openjdk-11
+  - distribution: fedora
+    version: "31"
+    playbook: openjdk-8
+  - distribution: fedora
+    version: "30"
+    playbook: openjdk-latest
+  - distribution: fedora
+    version: "30"
+    playbook: openjdk-12
+  - distribution: fedora
+    version: "30"
+    playbook: openjdk-11
+  - distribution: fedora
+    version: "30"
+    playbook: openjdk-8
+  - distribution: fedora
+    version: "29"
+    playbook: openjdk-latest
+  - distribution: fedora
+    version: "29"
+    playbook: openjdk-11
+  - distribution: fedora
+    version: "29"
+    playbook: openjdk-8
+  - distribution: fedora
+    version: "28"
+    playbook: openjdk-latest
+  - distribution: fedora
+    version: "28"
+    playbook: openjdk-11
+  - distribution: fedora
+    version: "28"
+    playbook: openjdk-8
+  - distribution: fedora
     version: "27"
     playbook: openjdk-latest
   - distribution: fedora
