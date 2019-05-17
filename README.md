@@ -28,6 +28,7 @@ Supported platforms:
     - 26
 - name: Debian
   versions:
+    - buster
     - stretch
     - jessie
     - wheezy
@@ -237,6 +238,7 @@ Openjdk version compatibility operating system:
 | Ubuntu       |  16.04  | 8 & 9         |
 | Ubuntu       |  14.04  | 6 & 7         |
 | Ubuntu       |  12.04  | 6 & 7         |
+| Debian       |    10   | 11            |
 | Debian       |    9    | 8             |
 | Debian       |    8    | 8             |
 | Debian       |    7    | 6 & 7         |
