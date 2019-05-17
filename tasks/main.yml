@@ -1,7 +1,7 @@
 ---
 # tasks file for ansible-role-java
 
-- name: *Nix | Include OS specific variables.
+- name: Linux/Unix | Include OS specific variables.
   include_vars: "{{ ansible_distribution }}.yml"
   when: ansible_system != "Win32NT"
 
