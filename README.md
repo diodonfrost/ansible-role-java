@@ -70,7 +70,10 @@ Supported platforms:
     - any
 - name: Gentoo
   versions:
-    - stage3
+    - any
+- name: ClearLinux
+  versions:
+    - any
 - name: FreeBSD
   versions:
     - 11.2
@@ -142,7 +145,7 @@ This is a sample playbook file for deploying the Ansible Galaxy java role in a l
 
 The preferred way of locally testing the role is to use Docker. You will have to install Docker on your system.
 
-You can also use vagrant and Virtualbox with vagrant to run tests locally. You will have to install Virtualbox and Vagrant on your system. For all our tests we use test-kitchen.
+You can also use Virtualbox with kitchen-ci to run tests locally. You will have to install Virtualbox and Vagrant on your system. For all our tests we use test-kitchen.
 
 Next install test-kitchen:
 

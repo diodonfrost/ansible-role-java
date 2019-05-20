@@ -14,12 +14,12 @@
   when: ansible_os_family == "Archlinux"
 
 - name: Suse | Update emerge cache
-  shell: zypper refresh
+  command: zypper refresh
   changed_when: false
   when: ansible_os_family == "Suse"
 
 - name: Gentoo | Update emerge cache
-  shell: emerge-webrsync
+  command: emerge-webrsync
   changed_when: false
   when: ansible_os_family == "Gentoo"
 
