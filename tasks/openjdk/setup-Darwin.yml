@@ -2,7 +2,9 @@
 # tasks file for install openjdk for Macosx
 
 - name: Darwin | List users
-  shell: ls -1 /Users/ |grep -v Shared |grep -v .localized
+  shell: |
+    set -o pipefail
+    ls -1 /Users/ |grep -v Shared |grep -v .localized
   register: list_users
   changed_when: false
 
