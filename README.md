@@ -259,6 +259,7 @@ Openjdk version compatibility operating system:
 | SLES         |   12    | 8             |
 | Archlinux    | rolling | 7, 8, 10 & 11 |
 | Gentoo       | stage3  | 8             |
+| Alpinelinux  | 3.9     | 7 & 8         |
 | FreeBSD      | 11.3    | 6, 7 & 8      |
 | FreeBSD      | 10.4    | 6, 7 & 8      |
 | OpenBSD      |  6.x    | 8             |
