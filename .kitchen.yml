@@ -77,6 +77,12 @@ platforms:
       platform: ubuntu
 
   # Debian
+  - name: debian-10
+    driver:
+      image: diodonfrost/debian-10-ansible
+      provision_command: apt-get install -y systemd
+      run_command: /bin/systemd
+      platform: debian
   - name: debian-9
     driver:
       image: diodonfrost/debian-9-ansible
@@ -203,6 +209,7 @@ suites:
       name: ansible_playbook
       playbook: tests/playbooks/openjdk-11.yml
     includes:
+      - debian-10
       - oraclelinux-7
       - fedora-27
       - ubuntu-18.04
@@ -236,6 +243,7 @@ suites:
       name: ansible_playbook
       playbook: tests/playbooks/openjdk-8.yml
     excludes:
+      - debian-10
       - ubuntu-14.04
       - ubuntu-19.04
 
