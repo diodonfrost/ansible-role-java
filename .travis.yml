@@ -43,9 +43,6 @@ env:
     playbook: openjdk-latest
   - distribution: fedora
     version: "31"
-    playbook: openjdk-12
-  - distribution: fedora
-    version: "31"
     playbook: openjdk-11
   - distribution: fedora
     version: "31"
