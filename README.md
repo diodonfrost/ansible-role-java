@@ -15,6 +15,7 @@ Supported platforms:
 ```yaml
 - name: EL
   versions:
+    - 8
     - 7
     - 6
     - 5
@@ -228,6 +229,7 @@ Openjdk version compatibility operating system:
 
 | distribution | release | java_version  |
 |--------------| ------- |---------------|
+| CentOS       |    8    | 8 & 11        |
 | CentOS       |    7    | 6, 7 & 8      |
 | CentOS       |    6    | 6, 7 & 8      |
 | Fedora       |   31    | 8, 11         |
