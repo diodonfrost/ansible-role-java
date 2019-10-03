@@ -9,6 +9,15 @@ env:
 #
 #-----------------------------------------------
   - distribution: centos
+    version: "8"
+    playbook: openjdk-latest
+  - distribution: centos
+    version: "8"
+    playbook: openjdk-11
+  - distribution: centos
+    version: "8"
+    playbook: openjdk-8
+  - distribution: centos
     version: "7"
     playbook: openjdk-latest
   - distribution: centos
