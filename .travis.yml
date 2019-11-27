@@ -129,6 +129,21 @@ env:
 #
 #--------------------------------
   - distribution: ubuntu
+    version: "20.04"
+    playbook: openjdk-latest
+  - distribution: ubuntu
+    version: "20.04"
+    playbook: openjdk-14
+  - distribution: ubuntu
+    version: "20.04"
+    playbook: openjdk-13
+  - distribution: ubuntu
+    version: "20.04"
+    playbook: openjdk-11
+  - distribution: ubuntu
+    version: "20.04"
+    playbook: openjdk-8
+  - distribution: ubuntu
     version: "19.04"
     playbook: openjdk-latest
   - distribution: ubuntu
@@ -140,6 +155,9 @@ env:
   - distribution: ubuntu
     version: "19.04"
     playbook: openjdk-11
+  - distribution: ubuntu
+    version: "19.04"
+    playbook: openjdk-8
   - distribution: ubuntu
     version: "18.04"
     playbook: openjdk-latest

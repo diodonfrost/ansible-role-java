@@ -53,6 +53,12 @@ platforms:
         - sed -i 's/UsePAM yes/UsePAM no/g' /etc/ssh/sshd_config
 
   # Ubuntu
+  - name: ubuntu-20.04
+    driver:
+      image: diodonfrost/ubuntu-20.04-ansible
+      provision_command: apt-get install -y init
+      run_command: /sbin/init
+      platform: ubuntu
   - name: ubuntu-19.04
     driver:
       image: diodonfrost/ubuntu-19.04-ansible
@@ -193,6 +199,7 @@ suites:
       name: ansible_playbook
       playbook: tests/playbooks/openjdk-13.yml
     includes:
+      - ubuntu-20.04
       - ubuntu-19.04
 
   # Test openjdk-12
@@ -212,6 +219,8 @@ suites:
       - debian-10
       - oraclelinux-7
       - fedora-27
+      - ubuntu-20.04
+      - ubuntu-19.04
       - ubuntu-18.04
       - archlinux-rolling
       - opensuse-15.1
