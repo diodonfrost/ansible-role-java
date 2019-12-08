@@ -160,34 +160,30 @@ platforms:
         - systemctl enable sshd
 
 suites:
-  # Test openjdk-latest
-  - name: openjdk-latest
+  - name: java-latest
     provisioner:
       name: ansible_playbook
-      playbook: tests/playbooks/openjdk-latest.yml
+      playbook: tests/playbooks/java-latest.yml
 
-  # Test openjdk-13
-  - name: openjdk-13
+  - name: java-13
     provisioner:
       name: ansible_playbook
-      playbook: tests/playbooks/openjdk-13.yml
+      playbook: tests/playbooks/java-13.yml
     includes:
       - ubuntu-20.04
       - ubuntu-19.04
 
-  # Test openjdk-12
-  - name: openjdk-12
+  - name: java-12
     provisioner:
       name: ansible_playbook
-      playbook: tests/playbooks/openjdk-12.yml
+      playbook: tests/playbooks/java-12.yml
     includes:
       - ubuntu-19.04
 
-  # Test openjdk-11
-  - name: openjdk-11
+  - name: java-11
     provisioner:
       name: ansible_playbook
-      playbook: tests/playbooks/openjdk-11.yml
+      playbook: tests/playbooks/java-11.yml
     includes:
       - debian-10
       - oraclelinux-7
@@ -199,41 +195,37 @@ suites:
       - opensuse-15.1
       - opensuse-15
 
-  # Test openjdk-10
-  - name: openjdk-10
+  - name: java-10
     provisioner:
       name: ansible_playbook
-      playbook: tests/playbooks/openjdk-10.yml
+      playbook: tests/playbooks/java-10.yml
     includes:
       - archlinux-rolling
       - opensuse-15.1
       - opensuse-15
 
-  # Test openjdk-9
-  - name: openjdk-9
+  - name: java-9
     provisioner:
       name: ansible_playbook
-      playbook: tests/playbooks/openjdk-9.yml
+      playbook: tests/playbooks/java-9.yml
     includes:
       - fedora-27
       - fedora-26
       - ubuntu-16.04
 
-  # Test openjdk-8
-  - name: openjdk-8
+  - name: java-8
     provisioner:
       name: ansible_playbook
-      playbook: tests/playbooks/openjdk-8.yml
+      playbook: tests/playbooks/java-8.yml
     excludes:
       - debian-10
       - ubuntu-14.04
       - ubuntu-19.04
 
-  # Test openjdk-7
-  - name: openjdk-7
+  - name: java-7
     provisioner:
       name: ansible_playbook
-      playbook: tests/playbooks/openjdk-7.yml
+      playbook: tests/playbooks/java-7.yml
     includes:
       - oraclelinux-7
       - oraclelinux-6
@@ -247,11 +239,10 @@ suites:
       - opensuse-13.2
       - archlinux-rolling
 
-  # Test openjdk-6
-  - name: openjdk-6
+  - name: java-6
     provisioner:
       name: ansible_playbook
-      playbook: tests/playbooks/openjdk-6.yml
+      playbook: tests/playbooks/java-6.yml
     includes:
       - centos-7
       - centos-6

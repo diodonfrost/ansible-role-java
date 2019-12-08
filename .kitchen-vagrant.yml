@@ -110,17 +110,15 @@ platforms:
       ansible_binary_path: /usr/local/bin/
 
 suites:
-  # Test openjdk-latest
-  - name: openjdk-latest
+  - name: java-latest
     provisioner:
       name: ansible_playbook
-      playbook: tests/playbooks/openjdk-latest.yml
+      playbook: tests/playbooks/java-latest.yml
 
-  # Test openjdk-11
-  - name: openjdk-11
+  - name: java-11
     provisioner:
       name: ansible_playbook
-      playbook: tests/playbooks/openjdk-11.yml
+      playbook: tests/playbooks/java-11.yml
     includes:
       - oraclelinux-7
       - fedora-27
@@ -130,19 +128,17 @@ suites:
       - macosx-10.11
       - macosx-10.10
 
-  # Test openjdk-10
-  - name: openjdk-10
+  - name: java-10
     provisioner:
       name: ansible_playbook
-      playbook: tests/playbooks/openjdk-10.yml
+      playbook: tests/playbooks/java-10.yml
     includes:
       - archlinux-rolling
 
-  # Test openjdk-9
-  - name: openjdk-9
+  - name: java-9
     provisioner:
       name: ansible_playbook
-      playbook: tests/playbooks/openjdk-9.yml
+      playbook: tests/playbooks/java-9.yml
     includes:
       - fedora-27
       - fedora-26
@@ -151,19 +147,17 @@ suites:
       - macosx-10.11
       - macosx-10.10
 
-  # Test openjdk-8
-  - name: openjdk-8
+  - name: java-8
     provisioner:
       name: ansible_playbook
-      playbook: tests/playbooks/openjdk-8.yml
+      playbook: tests/playbooks/java-8.yml
     excludes:
       - ubuntu-14.04
 
-  # Test openjdk-7
-  - name: openjdk-7
+  - name: java-7
     provisioner:
       name: ansible_playbook
-      playbook: tests/playbooks/openjdk-7.yml
+      playbook: tests/playbooks/java-7.yml
     includes:
       - oraclelinux-7
       - oraclelinux-6
@@ -177,11 +171,10 @@ suites:
       - opensuse-13.2
       - archlinux-rolling
 
-  # Test openjdk-6
-  - name: openjdk-6
+  - name: java-6
     provisioner:
       name: ansible_playbook
-      playbook: tests/playbooks/openjdk-6.yml
+      playbook: tests/playbooks/java-6.yml
     includes:
       - centos-7
       - centos-6
