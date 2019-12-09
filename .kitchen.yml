@@ -165,11 +165,19 @@ suites:
       name: ansible_playbook
       playbook: tests/playbooks/java-latest.yml
 
+  - name: java-14
+    provisioner:
+      name: ansible_playbook
+      playbook: tests/playbooks/java-14.yml
+    includes:
+      - ubuntu-20.04
+
   - name: java-13
     provisioner:
       name: ansible_playbook
       playbook: tests/playbooks/java-13.yml
     includes:
+      - archlinux-rolling
       - ubuntu-20.04
       - ubuntu-19.04
 
