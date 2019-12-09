@@ -247,8 +247,6 @@ env:
   - distribution: archlinux-rolling
     playbook: java-latest
   - distribution: archlinux-rolling
-    playbook: java-13
-  - distribution: archlinux-rolling
     playbook: java-11
   - distribution: archlinux-rolling
     playbook: java-10

@@ -1,12 +1,12 @@
 ---
 openjre_package: '{%- if java_version == "latest" -%}
-                     jre-openjdk
+                     jre-openjdk-headless
                   {%- else -%}
-                     jre{{ java_version }}-openjdk
+                     jre{{ java_version }}-openjdk-headless
                   {%- endif -%}'
 
 openjdk_package: '{%- if java_version == "latest" -%}
-                     jdk-openjdk-headless
+                     jdk-openjdk
                   {%- else -%}
-                     jdk{{ java_version }}-openjdk-headless
+                     jdk{{ java_version }}-openjdk
                   {%- endif -%}'
