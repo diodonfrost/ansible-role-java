@@ -4,6 +4,8 @@ driver:
   name: docker
   privileged: true
   volume: /sys/fs/cgroup:/sys/fs/cgroup
+  provision_command:
+    - sed -i 's/UsePAM yes/UsePAM no/g' /etc/ssh/sshd_config
 
 # Ansible will be our provisioner
 provisioner:
@@ -156,7 +158,6 @@ platforms:
       image: diodonfrost/archlinux-rolling-ansible
       platform: arch
       provision_command:
-        - sed -i 's/UsePAM yes/UsePAM no/g' /etc/ssh/sshd_config
         - systemctl enable sshd
 
 suites:
