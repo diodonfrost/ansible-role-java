@@ -231,9 +231,17 @@ Openjdk version compatibility operating system:
 
 | distribution | release | java_version      |
 |--------------| ------- |------------------ |
+| Alpinelinux  |   3.9   | 7 & 8             |
+| Amazonlinux  |    2    | 7 & 8             |
+| Amazonlinux  |    1    | 6, 7 & 8          |
+| Archlinux    | rolling | 7, 8, 10, 11 & 13 |
 | CentOS       |    8    | 8 & 11            |
 | CentOS       |    7    | 6, 7 & 8          |
 | CentOS       |    6    | 6, 7 & 8          |
+| Debian       |    10   | 11                |
+| Debian       |    9    | 8                 |
+| Debian       |    8    | 8                 |
+| Debian       |    7    | 6 & 7             |
 | Fedora       |   32    | 8, 11 & 13        |
 | Fedora       |   31    | 8, 11 & 13        |
 | Fedora       |   30    | 8, 11 & 12        |
@@ -241,40 +249,32 @@ Openjdk version compatibility operating system:
 | Fedora       |   28    | 8 & 11            |
 | Fedora       |   27    | 8 & 11            |
 | Fedora       |   26    | 8 &  9            |
+| FreeBSD      |  11.3   | 6, 7 & 8          |
+| FreeBSD      |  10.4   | 6, 7 & 8          |
+| Gentoo       | stage3  | 8                 |
+| Macosx       |  10.x   | 8, 9, 11          |
+| OpenBSD      |  6.x    | 8                 |
+| Opensuse     |   15    | 8, 10 & 11        |
+| Opensuse     |  42.3   | 7 & 8             |
+| Opensuse     |  42.2   | 7 & 8             |
+| Opensuse     |  42.1   | 7 & 8             |
+| Opensuse     |  13.2   | 7 & 8             |
+| Oraclelinux  |    7    | 6, 7, 8 & 11      |
+| Oraclelinux  |    6    | 6, 7 & 8          |
+| SLES         |   15    | 8                 |
+| SLES         |   13    | 8                 |
+| SLES         |   12    | 8                 |
+| Solaris      |   11    | 6, 7 ,8           |
+| Solaris      |   10    | 7, 8              |
 | Ubuntu       |  20.04  | 8,11,13 & 14      |
 | Ubuntu       |  19.04  | 8,11,12 & 13      |
 | Ubuntu       |  18.04  | 8 & 11            |
 | Ubuntu       |  16.04  | 8 & 9             |
 | Ubuntu       |  14.04  | 6 & 7             |
 | Ubuntu       |  12.04  | 6 & 7             |
-| Debian       |    10   | 11                |
-| Debian       |    9    | 8                 |
-| Debian       |    8    | 8                 |
-| Debian       |    7    | 6 & 7             |
-| Oraclelinux  |    7    | 6, 7, 8 & 11      |
-| Oraclelinux  |    6    | 6, 7 & 8          |
-| Amazonlinux  |    7    | 7 & 8             |
-| Amazonlinux  |    6    | 6, 7 & 8          |
-| Opensuse     |   15    | 8, 10 & 11        |
-| Opensuse     |  42.3   | 7 & 8             |
-| Opensuse     |  42.2   | 7 & 8             |
-| Opensuse     |  42.1   | 7 & 8             |
-| Opensuse     |  13.2   | 7 & 8             |
-| SLES         |   15    | 8                 |
-| SLES         |   13    | 8                 |
-| SLES         |   12    | 8                 |
-| Archlinux    | rolling | 7, 8, 10, 11 & 13 |
-| Gentoo       | stage3  | 8                 |
-| Alpinelinux  | 3.9     | 7 & 8             |
-| FreeBSD      | 11.3    | 6, 7 & 8          |
-| FreeBSD      | 10.4    | 6, 7 & 8          |
-| OpenBSD      |  6.x    | 8                 |
-| Solaris      |   11    | 6, 7 ,8           |
-| Solaris      |   10    | 7, 8              |
-| Macosx       |  10.x   | 8, 9, 11          |
-| Windows      | 2k16    | 11                |
-| Windows      | 2k12r2  | 11                |
-| Windows      | 2k8r2   | 11                |
+| Windows      |  2k16   | 11                |
+| Windows      |  2k12r2 | 11                |
+| Windows      |  2k8r2  | 11                |
 | Windows      |  8.1    | 11                |
 
 ## Author Information
