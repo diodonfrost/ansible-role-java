@@ -160,6 +160,12 @@ env:
 # Oraclelinux
 #
 #--------------------------------
+  - distribution: oraclelinux-8
+    playbook: java-latest
+  - distribution: oraclelinux-8
+    playbook: java-11
+  - distribution: oraclelinux-8
+    playbook: java-8
   - distribution: oraclelinux-7
     playbook: java-latest
   - distribution: oraclelinux-7

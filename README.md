@@ -46,6 +46,7 @@ Supported platforms:
     - trusty
 - name: OracleLinux
   versions:
+    - 8
     - 7
     - 6
 - name: Amazon
@@ -259,6 +260,7 @@ Openjdk version compatibility operating system:
 | Opensuse     |  42.2   | 7 & 8             |
 | Opensuse     |  42.1   | 7 & 8             |
 | Opensuse     |  13.2   | 7 & 8             |
+| Oraclelinux  |    8    | 8 & 11            |
 | Oraclelinux  |    7    | 6, 7, 8 & 11      |
 | Oraclelinux  |    6    | 6, 7 & 8          |
 | SLES         |   15    | 8                 |
