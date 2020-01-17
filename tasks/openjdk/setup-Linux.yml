@@ -1,7 +1,7 @@
 ---
 # tasks file for install openjdk for Linux
 
-- name: Debian - Update apt cache
+- name: Debian | Update apt cache
   apt:
     update_cache: yes
   changed_when: false
