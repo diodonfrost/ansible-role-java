@@ -232,12 +232,6 @@ env:
     playbook: java-8
   - distribution: opensuse-42.3
     playbook: java-7
-  - distribution: opensuse-42.2
-    playbook: java-latest
-  - distribution: opensuse-42.2
-    playbook: java-8
-  - distribution: opensuse-42.2
-    playbook: java-7
   - distribution: opensuse-13.2
     playbook: java-latest
   - distribution: opensuse-13.2
