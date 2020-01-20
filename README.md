@@ -1,6 +1,6 @@
 # ansible-role-java
 
-[![Build Status](https://travis-ci.org/diodonfrost/ansible-role-java.svg?branch=master)](https://travis-ci.org/diodonfrost/ansible-role-java)
+[![Build Status](https://travis-ci.com/diodonfrost/ansible-role-java.svg?branch=master)](https://travis-ci.com/diodonfrost/ansible-role-java)
 [![Ansible Galaxy](https://img.shields.io/badge/galaxy-diodonfrost.java-660198.svg)](https://galaxy.ansible.com/diodonfrost/java)
 
 This role provide a compliance for install java on your target host.
