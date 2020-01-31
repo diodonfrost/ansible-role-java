@@ -31,7 +31,7 @@ galaxy_info:
         - squeeze
     - name: Ubuntu
       versions:
-        - disco dingo
+        - disco
         - bionic
         - xenial
         - trusty
