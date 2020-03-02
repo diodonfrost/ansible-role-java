@@ -239,6 +239,7 @@ Openjdk version compatibility operating system:
 | CentOS       |    8    | 8 & 11            |
 | CentOS       |    7    | 6, 7 & 8          |
 | CentOS       |    6    | 6, 7 & 8          |
+| Clear Linux  | rolling | 8, 11, 12 & 13    |
 | Debian       |    10   | 11                |
 | Debian       |    9    | 8                 |
 | Debian       |    8    | 8                 |
