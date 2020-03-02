@@ -267,6 +267,7 @@ env:
   - distribution: alpine-rolling
     playbook: java-7
 
+
 before_install:
   # Build docker container
   - 'sudo docker pull diodonfrost/${distribution}-ansible:latest'
