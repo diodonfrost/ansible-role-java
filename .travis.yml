@@ -95,8 +95,6 @@ env:
   - distribution: ubuntu-20.04
     playbook: java-latest
   - distribution: ubuntu-20.04
-    playbook: java-14
-  - distribution: ubuntu-20.04
     playbook: java-13
   - distribution: ubuntu-20.04
     playbook: java-11
