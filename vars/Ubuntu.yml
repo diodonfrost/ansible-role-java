@@ -1,8 +1,6 @@
 ---
 # Define java version to use
-openjre_package: '{%- if java_version == "latest" and ansible_distribution_major_version|int >= 20 -%}
-                     openjdk-14-jre
-                  {%- elif java_version == "latest" and ansible_distribution_major_version|int >= 19 -%}
+openjre_package: '{%- if java_version == "latest" and ansible_distribution_major_version|int >= 19 -%}
                      openjdk-13-jre
                   {%- elif java_version == "latest" and ansible_distribution_major_version|int >= 18 -%}
                      openjdk-11-jre
@@ -15,9 +13,7 @@ openjre_package: '{%- if java_version == "latest" and ansible_distribution_major
                   {%- endif -%}'
 
 # Define java version to use
-openjdk_package: '{%- if java_version == "latest" and ansible_distribution_major_version|int >= 20 -%}
-                     openjdk-14-jdk
-                  {%- elif java_version == "latest" and ansible_distribution_major_version|int >= 19 -%}
+openjdk_package: '{%- if java_version == "latest" and ansible_distribution_major_version|int >= 19 -%}
                      openjdk-13-jdk
                   {%- elif java_version == "latest" and ansible_distribution_major_version|int >= 18 -%}
                      openjdk-11-jdk
