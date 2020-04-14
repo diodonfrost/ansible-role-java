@@ -1,16 +1,8 @@
 ---
-# we use docker as plateform
 driver:
   name: vagrant
 
-# We use Inspec as testing framework
-verifier:
-  name: inspec
-  inspec_tests:
-    - path: tests/inspec
-
 platforms:
-  # Provisioning of Ansible server where ansible playbook will be launched
   - name: centos-7
     driver:
       network:
@@ -28,7 +20,6 @@ platforms:
       name: shell
       command: echo 'Skipping Verify'
 
-  # Target Windows 2016 to test
   - name: windows-2k16
     driver:
       box: diodonfrost/windows-2k16
@@ -42,6 +33,11 @@ platforms:
         - tests/vagrant/vagrant_windows_target.rb
     transport:
       name: winrm
+
+verifier:
+  name: inspec
+  inspec_tests:
+    - path: tests/inspec
 
 suites:
   - name: default
