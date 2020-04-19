@@ -100,16 +100,6 @@ env:
     playbook: java-11
   - distribution: ubuntu-20.04
     playbook: java-8
-  - distribution: ubuntu-19.04
-    playbook: java-latest
-  - distribution: ubuntu-19.04
-    playbook: java-13
-  - distribution: ubuntu-19.04
-    playbook: java-12
-  - distribution: ubuntu-19.04
-    playbook: java-11
-  - distribution: ubuntu-19.04
-    playbook: java-8
   - distribution: ubuntu-18.04
     playbook: java-latest
   - distribution: ubuntu-18.04
