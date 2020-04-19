@@ -269,7 +269,7 @@ Openjdk version compatibility operating system:
 | SLES         |   12    | 8                 |
 | Solaris      |   11    | 6, 7 ,8           |
 | Solaris      |   10    | 7, 8              |
-| Ubuntu       |  20.04  | 8,11 & 13         |
+| Ubuntu       |  20.04  | 8 & 11            |
 | Ubuntu       |  19.04  | 8,11,12 & 13      |
 | Ubuntu       |  18.04  | 8 & 11            |
 | Ubuntu       |  16.04  | 8 & 9             |
