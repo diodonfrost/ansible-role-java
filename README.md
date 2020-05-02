@@ -1,6 +1,7 @@
 # ansible-role-java
 
 [![Build Status](https://travis-ci.com/diodonfrost/ansible-role-java.svg?branch=master)](https://travis-ci.com/diodonfrost/ansible-role-java)
+[![CI](https://github.com/diodonfrost/ansible-role-java/workflows/CI/badge.svg)](https://github.com/diodonfrost/ansible-role-java/actions)
 [![Ansible Galaxy](https://img.shields.io/badge/galaxy-diodonfrost.java-660198.svg)](https://galaxy.ansible.com/diodonfrost/java)
 
 This role provide a compliance for install java on your target host.
@@ -270,7 +271,6 @@ Openjdk version compatibility operating system:
 | Solaris      |   11    | 6, 7 ,8           |
 | Solaris      |   10    | 7, 8              |
 | Ubuntu       |  20.04  | 8 & 11            |
-| Ubuntu       |  19.04  | 8,11,12 & 13      |
 | Ubuntu       |  18.04  | 8 & 11            |
 | Ubuntu       |  16.04  | 8 & 9             |
 | Ubuntu       |  14.04  | 6 & 7             |
