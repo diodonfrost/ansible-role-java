@@ -1,0 +1,123 @@
+name: CI
+
+on:
+  push:
+  pull_request:
+  schedule:
+    - cron: '0 18 * * sun'
+
+jobs:
+  build:
+    name: ${{ matrix.distribution }} ${{ matrix.playbook }}
+    runs-on: ubuntu-18.04
+    strategy:
+      fail-fast: false
+      matrix:
+        distribution:
+          - centos-8
+          - centos-7
+          - centos-6
+          - fedora-32
+          - fedora-31
+          - fedora-30
+          - fedora-29
+          - fedora-28
+          - fedora-27
+          - fedora-26
+          - ubuntu-20.04
+          - ubuntu-18.04
+          - ubuntu-16.04
+          - ubuntu-14.04
+          - ubuntu-12.04
+          - debian-10
+          - debian-9
+          - debian-8
+          - oraclelinux-8
+          - oraclelinux-7
+          - oraclelinux-6
+          - amazonlinux-2
+          - amazonlinux-1
+          - opensuse-15.1
+          - opensuse-15
+          - opensuse-42.3
+          - opensuse-13.2
+          - archlinux-rolling
+          - alpine-rolling
+        playbook:
+          - java-latest
+          - java-8
+        include:
+          - {distribution: "centos-8", playbook: "java-11"}
+          - {distribution: "centos-7", playbook: "java-7"}
+          - {distribution: "centos-6", playbook: "java-7"}
+          - {distribution: "centos-6", playbook: "java-6"}
+          - {distribution: "fedora-32", playbook: "java-13"}
+          - {distribution: "fedora-32", playbook: "java-11"}
+          - {distribution: "fedora-31", playbook: "java-13"}
+          - {distribution: "fedora-31", playbook: "java-11"}
+          - {distribution: "fedora-30", playbook: "java-12"}
+          - {distribution: "fedora-30", playbook: "java-11"}
+          - {distribution: "fedora-29", playbook: "java-11"}
+          - {distribution: "fedora-28", playbook: "java-11"}
+          - {distribution: "fedora-27", playbook: "java-9"}
+          - {distribution: "fedora-26", playbook: "java-9"}
+          - {distribution: "ubuntu-20.04", playbook: "java-11"}
+          - {distribution: "ubuntu-18.04", playbook: "java-11"}
+          - {distribution: "ubuntu-16.04", playbook: "java-9"}
+          - {distribution: "ubuntu-14.04", playbook: "java-7"}
+          - {distribution: "ubuntu-14.04", playbook: "java-6"}
+          - {distribution: "ubuntu-12.04", playbook: "java-6"}
+          - {distribution: "debian-10", playbook: "java-11"}
+          - {distribution: "debian-8", playbook: "java-7"}
+          - {distribution: "oraclelinux-8", playbook: "java-11"}
+          - {distribution: "oraclelinux-7", playbook: "java-11"}
+          - {distribution: "oraclelinux-7", playbook: "java-7"}
+          - {distribution: "oraclelinux-6", playbook: "java-7"}
+          - {distribution: "oraclelinux-6", playbook: "java-6"}
+          - {distribution: "amazonlinux-2", playbook: "java-7"}
+          - {distribution: "amazonlinux-1", playbook: "java-7"}
+          - {distribution: "amazonlinux-1", playbook: "java-6"}
+          - {distribution: "opensuse-15.1", playbook: "java-11"}
+          - {distribution: "opensuse-15.1", playbook: "java-10"}
+          - {distribution: "opensuse-15", playbook: "java-11"}
+          - {distribution: "opensuse-15", playbook: "java-10"}
+          - {distribution: "opensuse-42.3", playbook: "java-7"}
+          - {distribution: "opensuse-13.2", playbook: "java-7"}
+          - {distribution: "archlinux-rolling", playbook: "java-11"}
+          - {distribution: "archlinux-rolling", playbook: "java-10"}
+          - {distribution: "archlinux-rolling", playbook: "java-7"}
+          - {distribution: "alpine-rolling", playbook: "java-7"}
+        exclude:
+          - {distribution: "ubuntu-14.04", playbook: "java-8"}
+          - {distribution: "ubuntu-12.04", playbook: "java-8"}
+          - {distribution: "debian-10", playbook: "java-8"}
+          - {distribution: "debian-8", playbook: "java-8"}
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Install Inspec
+        run: curl https://omnitruck.chef.io/install.sh | sudo bash -s -- -P inspec -v 4.18.51
+
+      - name: Test Ansible role Java
+        run: |
+          container_id=$(mktemp)
+
+          # Run container and mount ansible role with it
+          sudo docker run --detach --privileged -v /sys/fs/cgroup:/sys/fs/cgroup:ro --volume="${PWD}":/etc/ansible/roles/ansible-role-java:ro diodonfrost/${{ matrix.distribution }}-ansible:latest > "${container_id}"
+
+          # Check syntax
+          sudo docker exec "$(cat ${container_id})" env ANSIBLE_FORCE_COLOR=1 ansible-playbook -v /etc/ansible/roles/ansible-role-java/tests/playbooks/${{ matrix.playbook }}.yml --syntax-check
+
+          # Run ansible playbook
+          sudo docker exec "$(cat ${container_id})" env ANSIBLE_FORCE_COLOR=1 ansible-playbook -v /etc/ansible/roles/ansible-role-java/tests/playbooks/${{ matrix.playbook }}.yml
+
+          # Test indempotence
+          sudo docker exec "$(cat ${container_id})" env ANSIBLE_FORCE_COLOR=1 ansible-playbook -v /etc/ansible/roles/ansible-role-java/tests/playbooks/${{ matrix.playbook }}.yml \
+          | grep -q 'changed=0.*failed=0' \
+          && (echo 'Idempotence test: pass' && exit 0) \
+          || (echo 'Idempotence test: fail' && exit 1)
+
+          # Test role
+          inspec exec tests/inspec --chef-license accept-silent -t docker://$(cat ${container_id})
