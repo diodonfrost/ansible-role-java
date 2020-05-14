@@ -7,7 +7,7 @@ on:
     - cron: '0 18 * * sun'
 
 jobs:
-  build:
+  test:
     name: ${{ matrix.distribution }} ${{ matrix.playbook }}
     runs-on: ubuntu-18.04
     strategy:
