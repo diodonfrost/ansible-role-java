@@ -83,6 +83,7 @@ jobs:
           - {distribution: "opensuse-15", playbook: "java-10"}
           - {distribution: "opensuse-42.3", playbook: "java-7"}
           - {distribution: "opensuse-13.2", playbook: "java-7"}
+          - {distribution: "archlinux-rolling", playbook: "java-14"}
           - {distribution: "archlinux-rolling", playbook: "java-11"}
           - {distribution: "archlinux-rolling", playbook: "java-7"}
           - {distribution: "alpine-rolling", playbook: "java-7"}
