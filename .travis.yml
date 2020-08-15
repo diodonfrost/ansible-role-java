@@ -196,6 +196,22 @@ env:
 # Opensuse
 #
 #--------------------------------
+  - distribution: opensuse-leap
+    playbook: java-latest
+  - distribution: opensuse-leap
+    playbook: java-11
+  - distribution: opensuse-leap
+    playbook: java-9
+  - distribution: opensuse-leap
+    playbook: java-8
+  - distribution: opensuse-tumbleweed
+    playbook: java-latest
+  - distribution: opensuse-tumbleweed
+    playbook: java-15
+  - distribution: opensuse-tumbleweed
+    playbook: java-14
+  - distribution: opensuse-tumbleweed
+    playbook: java-8
   - distribution: opensuse-15.1
     playbook: java-latest
   - distribution: opensuse-15.1

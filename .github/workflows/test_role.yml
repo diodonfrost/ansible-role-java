@@ -37,6 +37,8 @@ jobs:
           - oraclelinux-6
           - amazonlinux-2
           - amazonlinux-1
+          - opensuse-leap
+          - opensuse-tumbleweed
           - opensuse-15.1
           - opensuse-15
           - opensuse-42.3
@@ -77,6 +79,9 @@ jobs:
           - {distribution: "amazonlinux-2", playbook: "java-7"}
           - {distribution: "amazonlinux-1", playbook: "java-7"}
           - {distribution: "amazonlinux-1", playbook: "java-6"}
+          - {distribution: "opensuse-leap", playbook: "java-11"}
+          - {distribution: "opensuse-tumbleweed", playbook: "java-15"}
+          - {distribution: "opensuse-tumbleweed", playbook: "java-14"}
           - {distribution: "opensuse-15.1", playbook: "java-11"}
           - {distribution: "opensuse-15.1", playbook: "java-10"}
           - {distribution: "opensuse-15", playbook: "java-11"}
