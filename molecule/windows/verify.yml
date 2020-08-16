@@ -1,0 +1,14 @@
+---
+- name: Verify
+  hosts: all
+  tasks:
+  - name: Windows | Java should be functionnal
+    win_command: java -version
+    ignore_errors: yes
+    register: java_result
+
+  - name: Windows | Verify commands outputs
+    assert:
+      that:
+        - java_result.rc == 0
+      success_msg: "All tests passed"
