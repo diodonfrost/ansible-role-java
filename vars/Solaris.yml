@@ -1,22 +1,22 @@
 ---
 # Define java version to use
 openjre_package: '{%- if java_version == "latest" and ansible_distribution_version|int >= 11 -%}
-                     jre-8
+                      jre-8
                   {%- elif java_version == "latest" and ansible_distribution_version|int == 10 -%}
-                     	CSWjre
+                      CSWjre
                   {%- elif ansible_distribution_version|int == 10 -%}
-                     	CSWjre{{ java_version }}
+                      CSWjre{{ java_version }}
                   {%- else -%}
-                     jre-{{ java_version }}
+                      jre-{{ java_version }}
                   {%- endif -%}'
 
 # Define java version to use
 openjdk_package: '{%- if java_version == "latest" and ansible_distribution_version|int >= 11 -%}
-                     jdk-8
+                      jdk-8
                   {%- elif java_version == "latest" and ansible_distribution_version|int == 10 -%}
-                     	CSWjdk
+                      CSWjdk
                   {%- elif ansible_distribution_version|int == 10 -%}
-                     	CSWjdk{{ java_version }}
+                      CSWjdk{{ java_version }}
                   {%- else -%}
-                     jdk-{{ java_version }}
+                      jdk-{{ java_version }}
                   {%- endif -%}'
