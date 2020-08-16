@@ -1,0 +1,8 @@
+---
+- name: Converge
+  hosts: all
+  become: yes
+  tasks:
+    - name: "Include ansible-role-java"
+      include_role:
+        name: "ansible-role-java"
