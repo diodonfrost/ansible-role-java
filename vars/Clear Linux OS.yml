@@ -1,7 +1,7 @@
 ---
 openjre_package: '{%- if java_version == "latest" -%}
                      java13-basic
-                  {%- elif java_version == 8 -%}
+                  {%- elif java_version|int == 8 -%}
                      java-runtime
                   {%- else -%}
                      java{{ java_version }}-basic
@@ -9,7 +9,7 @@ openjre_package: '{%- if java_version == "latest" -%}
 
 openjdk_package: '{%- if java_version == "latest" -%}
                      java13-basic
-                  {%- elif java_version == 8 -%}
+                  {%- elif java_version|int == 8 -%}
                      java-runtime
                   {%- else -%}
                      java{{ java_version }}-basic

@@ -2,7 +2,7 @@
 # Define java version to use
 openjre_package: '{%- if java_version == "latest" -%}
                     java-15-openjdk
-                  {%- elif java_version == 8 -%}
+                  {%- elif java_version|int == 8 -%}
                      java-1_{{ java_version }}_0-openjdk
                   {%- else -%}
                      java-{{ java_version }}-openjdk
@@ -11,7 +11,7 @@ openjre_package: '{%- if java_version == "latest" -%}
 # Define java version to use
 openjdk_package: '{%- if java_version == "latest" -%}
                     java-15-openjdk-devel
-                  {%- elif java_version == 8 -%}
+                  {%- elif java_version|int == 8 -%}
                      java-1_{{ java_version }}_0-openjdk-devel
                   {%- else -%}
                      java-{{ java_version }}-openjdk-devel
