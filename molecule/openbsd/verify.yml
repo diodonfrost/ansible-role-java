@@ -1,0 +1,14 @@
+---
+- name: Verify
+  hosts: all
+  tasks:
+  - name: OpenBSD | Java should be functionnal
+    command: java -version
+    ignore_errors: yes
+    register: java_result
+
+  - name: OpenBSD | Verify commands outputs
+    assert:
+      that:
+        - java_result.rc == 0
+      success_msg: "All tests passed"
