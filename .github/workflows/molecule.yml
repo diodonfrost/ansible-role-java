@@ -92,6 +92,8 @@ jobs:
           - {distribution: "archlinux-rolling", java_version: "11"}
           - {distribution: "archlinux-rolling", java_version: "7"}
           - {distribution: "alpine-rolling", java_version: "7"}
+          - {distribution: "alpine-rolling", java_version: "10"}
+          - {distribution: "alpine-rolling", java_version: "11"}
         exclude:
           - {distribution: "ubuntu-14.04", java_version: "8"}
           - {distribution: "ubuntu-12.04", java_version: "8"}
