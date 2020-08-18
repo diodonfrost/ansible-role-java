@@ -200,7 +200,7 @@ Openjdk version compatibility operating system:
 
 | distribution | release    | java_version      |
 |--------------| ---------- |------------------ |
-| Alpinelinux  |   3.9      | 7 & 8             |
+| Alpinelinux  |   3.9      | 7, 8, 10 & 11     |
 | Amazonlinux  |    2       | 7 & 8             |
 | Amazonlinux  |    1       | 6, 7 & 8          |
 | Archlinux    | rolling    | 7, 8, 11 & 14     |
