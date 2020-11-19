@@ -147,30 +147,39 @@ This is a sample playbook file for deploying the Ansible Galaxy java role in a l
 
 ## Local Testing
 
-The preferred way of locally testing the role is to use Docker. You will have to install Docker on your system.
+This project uses [Molecule](http://molecule.readthedocs.io/) to aid in the
+development and testing.
 
-You can also use Virtualbox with molecule to run tests locally. You will have to install Virtualbox and Vagrant on your system. For all our tests we use molecule.
+To develop or test you'll need to have installed the following:
+
+* Linux (e.g. [Ubuntu](http://www.ubuntu.com/))
+* [Docker](https://www.docker.com/)
+* [Python](https://www.python.org/) (including python-pip)
+* [Ansible](https://www.ansible.com/)
+* [Molecule](http://molecule.readthedocs.io/)
+* [Virtualbox](https://www.virtualbox.org/) (windows/bsd test only)
+* [Vagrant](https://www.vagrantup.com/downloads.html) (windows/bsd test only)
 
 ### Testing with Docker
 
 ```shell
 # Test ansible role with centos-8
-distribution=centos-8 molecule test
+image=ansible-centos:8 molecule test
 
 # Test ansible role with ubuntu-20.04
-distribution=ubuntu-20.04 molecule test
+image=ansible-ubuntu:20.04 molecule test
 
-# Test ansible role with alpine-rolling
-distribution=alpine-rolling molecule test
+# Test ansible role with alpine-latest
+image=ansible-alpine:latest molecule test
 
 # Create centos-7 instance
-distribution=centos-7 molecule create
+image=ansible-centos:7 molecule create
 
 # Apply role on centos-7 instance
-distribution=centos-7 molecule converge
+image=ansible-centos:7 molecule converge
 
 # Launch tests on centos-7 instance
-distribution=centos-7 molecule verify
+image=ansible-centos:7 molecule verify
 ```
 
 ### Testing with Vagrant and Virtualbox
@@ -197,16 +206,16 @@ Apache 2
 
 Openjdk version compatibility operating system:
 
-| distribution | release    | java_version      |
+| image        | release    | java_version      |
 |--------------| ---------- |------------------ |
 | Alpinelinux  |   3.9      | 7, 8, 10 & 11     |
 | Amazonlinux  |    2       | 7 & 8             |
 | Amazonlinux  |    1       | 6, 7 & 8          |
-| Archlinux    | rolling    | 7, 8, 11 & 14     |
+| Archlinux    | latest     | 7, 8, 11 & 14     |
 | CentOS       |    8       | 8 & 11            |
 | CentOS       |    7       | 6, 7 & 8          |
 | CentOS       |    6       | 6, 7 & 8          |
-| Clear Linux  | rolling    | 8, 11, 12 & 13    |
+| Clear Linux  | latest     | 8, 11, 12 & 13    |
 | Debian       |    10      | 11                |
 | Debian       |    9       | 8                 |
 | Debian       |    8       | 8                 |
