@@ -7,103 +7,8 @@ This role provide a compliance for install java on your target host.
 
 ## Requirements
 
-This role was developed using Ansible 2.4 Backwards compatibility is not guaranteed.
+This role was developed using Ansible 2.8 Backwards compatibility is not guaranteed.
 Use `ansible-galaxy install diodonfrost.java` to install the role on your system.
-
-Supported platforms:
-
-```yaml
-- name: EL
-  versions:
-    - 8
-    - 7
-    - 6
-    - 5
-- name: Fedora
-  versions:
-    - 32
-    - 31
-    - 30
-    - 29
-    - 28
-    - 27
-    - 26
-- name: Debian
-  versions:
-    - buster
-    - stretch
-    - jessie
-    - wheezy
-    - squeeze
-- name: Ubuntu
-  versions:
-    - focal
-    - disco dingo
-    - bionic
-    - xenial
-    - trusty
-    - precise
-    - trusty
-- name: OracleLinux
-  versions:
-    - 8
-    - 7
-    - 6
-- name: Amazon
-  versions:
-    - 2017.12
-    - 2016.03
-    - 2013.09
-- name: opensuse
-  versions:
-    - 15.1
-    - 15
-    - 42.3
-    - 42.2
-    - 42.1
-    - 13.2
-- name: SLES
-  versions:
-    - 11
-    - 12
-- name: ArchLinux
-  versions:
-    - any
-- name: Alpine
-  versions:
-    - any
-- name: Gentoo
-  versions:
-    - any
-- name: ClearLinux
-  versions:
-    - any
-- name: FreeBSD
-  versions:
-    - 11.2
-    - 10.4
-    - 10.3
-- name: OpenBSD
-  versions:
-    - 6.0
-    - 6.4
-- name: Solaris
-  versions:
-    - 10
-    - 11.0
-- name: MacOSX
-  versions:
-    - 10.10
-    - 10.11
-    - 10.12
-    - 10.13
-- name: Windows
-  versions:
-    - 2016
-    - 2012R2
-    - 2008R2
-    - 8.1
-```
 
 ## Role Variables
 
@@ -115,7 +20,7 @@ This role has multiple variables. The defaults for all these variables are the f
 
 # Specify java version to install
 # Depends on the operating system
-# Accepted value: 6,7,8,9,10,11,12,13,latest
+# Accepted value: 6,7,8,9,10,11,12,13,15,latest
 # latest take latest version of java supported by operating system
 # Default latest
 java_version: latest
@@ -164,7 +69,7 @@ To develop or test you'll need to have installed the following:
 
 ```shell
 # Test ansible role with centos-8
-image=ansible-centos:8 molecule test
+molecule test
 
 # Test ansible role with ubuntu-20.04
 image=ansible-ubuntu:20.04 molecule test
@@ -172,14 +77,14 @@ image=ansible-ubuntu:20.04 molecule test
 # Test ansible role with alpine-latest
 image=ansible-alpine:latest molecule test
 
-# Create centos-7 instance
-image=ansible-centos:7 molecule create
+# Create centos-8 instance
+molecule create
 
-# Apply role on centos-7 instance
-image=ansible-centos:7 molecule converge
+# Apply role on centos-8 instance
+molecule converge
 
-# Launch tests on centos-7 instance
-image=ansible-centos:7 molecule verify
+# Launch tests on centos-8 instance
+molecule verify
 ```
 
 ### Testing with Vagrant and Virtualbox
@@ -220,6 +125,7 @@ Openjdk version compatibility operating system:
 | Debian       |    9       | 8                 |
 | Debian       |    8       | 8                 |
 | Debian       |    7       | 6 & 7             |
+| Fedora       |   33       | 8, 11 & 15        |
 | Fedora       |   32       | 8, 11 & 13        |
 | Fedora       |   31       | 8, 11 & 13        |
 | Fedora       |   30       | 8, 11 & 12        |

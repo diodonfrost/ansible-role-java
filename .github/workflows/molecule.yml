@@ -24,6 +24,10 @@ jobs:
           - {image: "centos:6", java_version: "8"}
           - {image: "centos:6", java_version: "7"}
           - {image: "centos:6", java_version: "6"}
+          - {image: "fedora:33", java_version: "latest"}
+          - {image: "fedora:33", java_version: "15"}
+          - {image: "fedora:33", java_version: "11"}
+          - {image: "fedora:33", java_version: "8"}
           - {image: "fedora:32", java_version: "latest"}
           - {image: "fedora:32", java_version: "13"}
           - {image: "fedora:32", java_version: "11"}
