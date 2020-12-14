@@ -8,95 +8,107 @@ on:
 
 jobs:
   test:
-    name: ${{ matrix.image }} java ${{ matrix.java_version }}
+    name: ${{ matrix.molecule.image }} java ${{ matrix.molecule.java_version }}
     runs-on: ubuntu-18.04
     strategy:
       fail-fast: false
       matrix:
-        image:
-          - ansible-centos:8
-          - ansible-centos:7
-          - ansible-centos:6
-          - ansible-fedora:32
-          - ansible-fedora:31
-          - ansible-fedora:30
-          - ansible-fedora:29
-          - ansible-fedora:28
-          - ansible-fedora:27
-          - ansible-fedora:26
-          - ansible-ubuntu:20.04
-          - ansible-ubuntu:18.04
-          - ansible-ubuntu:16.04
-          - ansible-ubuntu:14.04
-          - ansible-ubuntu:12.04
-          - ansible-debian:10
-          - ansible-debian:9
-          - ansible-debian:8
-          - ansible-oraclelinux:8
-          - ansible-oraclelinux:7
-          - ansible-oraclelinux:6
-          - ansible-amazonlinux:2
-          - ansible-amazonlinux:1
-          - ansible-opensuse:leap
-          - ansible-opensuse:tumbleweed
-          - ansible-opensuse:15.1
-          - ansible-opensuse:15
-          - ansible-opensuse:42.3
-          - ansible-archlinux:latest
-          - ansible-alpine:latest
-        java_version:
-          - latest
-          - 8
-        include:
-          - {image: "ansible-centos:8", java_version: "11"}
-          - {image: "ansible-centos:7", java_version: "7"}
-          - {image: "ansible-centos:6", java_version: "7"}
-          - {image: "ansible-centos:6", java_version: "6"}
-          - {image: "ansible-fedora:32", java_version: "13"}
-          - {image: "ansible-fedora:32", java_version: "11"}
-          - {image: "ansible-fedora:31", java_version: "13"}
-          - {image: "ansible-fedora:31", java_version: "11"}
-          - {image: "ansible-fedora:30", java_version: "12"}
-          - {image: "ansible-fedora:30", java_version: "11"}
-          - {image: "ansible-fedora:29", java_version: "11"}
-          - {image: "ansible-fedora:28", java_version: "11"}
-          - {image: "ansible-fedora:27", java_version: "9"}
-          - {image: "ansible-fedora:26", java_version: "9"}
-          - {image: "ansible-ubuntu:20.04", java_version: "11"}
-          - {image: "ansible-ubuntu:18.04", java_version: "11"}
-          - {image: "ansible-ubuntu:16.04", java_version: "9"}
-          - {image: "ansible-ubuntu:14.04", java_version: "7"}
-          - {image: "ansible-ubuntu:14.04", java_version: "6"}
-          - {image: "ansible-ubuntu:12.04", java_version: "6"}
-          - {image: "ansible-debian:10", java_version: "11"}
-          - {image: "ansible-debian:8", java_version: "7"}
-          - {image: "ansible-oraclelinux:8", java_version: "11"}
-          - {image: "ansible-oraclelinux:7", java_version: "11"}
-          - {image: "ansible-oraclelinux:7", java_version: "7"}
-          - {image: "ansible-oraclelinux:6", java_version: "7"}
-          - {image: "ansible-oraclelinux:6", java_version: "6"}
-          - {image: "ansible-amazonlinux:2", java_version: "7"}
-          - {image: "ansible-amazonlinux:1", java_version: "7"}
-          - {image: "ansible-amazonlinux:1", java_version: "6"}
-          - {image: "ansible-opensuse:leap", java_version: "11"}
-          - {image: "ansible-opensuse:tumbleweed", java_version: "15"}
-          - {image: "ansible-opensuse:tumbleweed", java_version: "14"}
-          - {image: "ansible-opensuse:15.1", java_version: "11"}
-          - {image: "ansible-opensuse:15.1", java_version: "10"}
-          - {image: "ansible-opensuse:15", java_version: "11"}
-          - {image: "ansible-opensuse:15", java_version: "10"}
-          - {image: "ansible-opensuse:42.3", java_version: "7"}
-          - {image: "ansible-archlinux:latest", java_version: "14"}
-          - {image: "ansible-archlinux:latest", java_version: "11"}
-          - {image: "ansible-archlinux:latest", java_version: "7"}
-          - {image: "ansible-alpine:latest", java_version: "7"}
-          - {image: "ansible-alpine:latest", java_version: "10"}
-          - {image: "ansible-alpine:latest", java_version: "11"}
-        exclude:
-          - {image: "ansible-ubuntu:14.04", java_version: "8"}
-          - {image: "ansible-ubuntu:12.04", java_version: "8"}
-          - {image: "ansible-debian:10", java_version: "8"}
-          - {image: "ansible-debian:8", java_version: "8"}
+        molecule:
+          - {image: "centos:8", java_version: "latest"}
+          - {image: "centos:8", java_version: "11"}
+          - {image: "centos:8", java_version: "8"}
+          - {image: "centos:7", java_version: "latest"}
+          - {image: "centos:7", java_version: "8"}
+          - {image: "centos:7", java_version: "7"}
+          - {image: "centos:6", java_version: "latest"}
+          - {image: "centos:6", java_version: "8"}
+          - {image: "centos:6", java_version: "7"}
+          - {image: "centos:6", java_version: "6"}
+          - {image: "fedora:32", java_version: "latest"}
+          - {image: "fedora:32", java_version: "13"}
+          - {image: "fedora:32", java_version: "11"}
+          - {image: "fedora:32", java_version: "8"}
+          - {image: "fedora:31", java_version: "latest"}
+          - {image: "fedora:31", java_version: "13"}
+          - {image: "fedora:31", java_version: "11"}
+          - {image: "fedora:31", java_version: "8"}
+          - {image: "fedora:30", java_version: "latest"}
+          - {image: "fedora:30", java_version: "12"}
+          - {image: "fedora:30", java_version: "11"}
+          - {image: "fedora:30", java_version: "8"}
+          - {image: "fedora:29", java_version: "latest"}
+          - {image: "fedora:29", java_version: "11"}
+          - {image: "fedora:29", java_version: "8"}
+          - {image: "fedora:28", java_version: "latest"}
+          - {image: "fedora:28", java_version: "11"}
+          - {image: "fedora:28", java_version: "8"}
+          - {image: "fedora:27", java_version: "latest"}
+          - {image: "fedora:27", java_version: "9"}
+          - {image: "fedora:27", java_version: "8"}
+          - {image: "fedora:26", java_version: "latest"}
+          - {image: "fedora:26", java_version: "9"}
+          - {image: "fedora:26", java_version: "8"}
+          - {image: "ubuntu:20.04", java_version: "latest"}
+          - {image: "ubuntu:20.04", java_version: "11"}
+          - {image: "ubuntu:20.04", java_version: "8"}
+          - {image: "ubuntu:18.04", java_version: "latest"}
+          - {image: "ubuntu:18.04", java_version: "11"}
+          - {image: "ubuntu:18.04", java_version: "8"}
+          - {image: "ubuntu:16.04", java_version: "latest"}
+          - {image: "ubuntu:16.04", java_version: "9"}
+          - {image: "ubuntu:16.04", java_version: "8"}
+          - {image: "ubuntu:14.04", java_version: "latest"}
+          - {image: "ubuntu:14.04", java_version: "7"}
+          - {image: "ubuntu:14.04", java_version: "6"}
+          - {image: "ubuntu:12.04", java_version: "latest"}
+          - {image: "ubuntu:12.04", java_version: "6"}
+          - {image: "debian:10", java_version: "latest"}
+          - {image: "debian:10", java_version: "11"}
+          - {image: "debian:8", java_version: "latest"}
+          - {image: "debian:8", java_version: "7"}
+          - {image: "oraclelinux:8", java_version: "latest"}
+          - {image: "oraclelinux:8", java_version: "11"}
+          - {image: "oraclelinux:8", java_version: "8"}
+          - {image: "oraclelinux:7", java_version: "latest"}
+          - {image: "oraclelinux:7", java_version: "11"}
+          - {image: "oraclelinux:7", java_version: "8"}
+          - {image: "oraclelinux:7", java_version: "7"}
+          - {image: "oraclelinux:6", java_version: "latest"}
+          - {image: "oraclelinux:6", java_version: "8"}
+          - {image: "oraclelinux:6", java_version: "7"}
+          - {image: "oraclelinux:6", java_version: "6"}
+          - {image: "amazonlinux:2", java_version: "latest"}
+          - {image: "amazonlinux:2", java_version: "8"}
+          - {image: "amazonlinux:2", java_version: "7"}
+          - {image: "amazonlinux:1", java_version: "latest"}
+          - {image: "amazonlinux:1", java_version: "8"}
+          - {image: "amazonlinux:1", java_version: "7"}
+          - {image: "amazonlinux:1", java_version: "6"}
+          - {image: "opensuse:leap", java_version: "latest"}
+          - {image: "opensuse:leap", java_version: "8"}
+          - {image: "opensuse:leap", java_version: "11"}
+          - {image: "opensuse:tumbleweed", java_version: "latest"}
+          - {image: "opensuse:tumbleweed", java_version: "15"}
+          - {image: "opensuse:tumbleweed", java_version: "14"}
+          - {image: "opensuse:tumbleweed", java_version: "8"}
+          - {image: "opensuse:15.1", java_version: "latest"}
+          - {image: "opensuse:15.1", java_version: "11"}
+          - {image: "opensuse:15.1", java_version: "10"}
+          - {image: "opensuse:15.1", java_version: "8"}
+          - {image: "opensuse:15", java_version: "latest"}
+          - {image: "opensuse:15", java_version: "11"}
+          - {image: "opensuse:15", java_version: "10"}
+          - {image: "opensuse:15", java_version: "8"}
+          - {image: "archlinux:latest", java_version: "latest"}
+          - {image: "archlinux:latest", java_version: "14"}
+          - {image: "archlinux:latest", java_version: "11"}
+          - {image: "archlinux:latest", java_version: "8"}
+          - {image: "archlinux:latest", java_version: "7"}
+          - {image: "alpine:latest", java_version: "latest"}
+          - {image: "alpine:latest", java_version: "11"}
+          - {image: "alpine:latest", java_version: "10"}
+          - {image: "alpine:latest", java_version: "8"}
+          - {image: "alpine:latest", java_version: "7"}
 
     steps:
       - name: Checkout repository
@@ -113,5 +125,7 @@ jobs:
           pip install ansible ansible-lint molecule-docker docker
 
       - name: Test Ansible role
-        run: |
-          image=${{ matrix.image }} java_version=${{ matrix.java_version }} molecule test
+        run: molecule test
+        env:
+          image: ansible-${{ matrix.molecule.image }}
+          java_version: ${{ matrix.molecule.java_version }}
