@@ -129,3 +129,9 @@ jobs:
         env:
           image: ansible-${{ matrix.molecule.image }}
           java_version: ${{ matrix.molecule.java_version }}
+
+      - name: Test Ansible role with check_mode enable
+        run: molecule check
+        env:
+          image: ansible-${{ matrix.molecule.image }}
+          java_version: ${{ matrix.molecule.java_version }}
