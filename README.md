@@ -113,7 +113,7 @@ Openjdk version compatibility operating system:
 
 | image        | release    | java_version      |
 |--------------| ---------- |------------------ |
-| Alpinelinux  |   3.9      | 7, 8, 10 & 11     |
+| Alpinelinux  |   latest   | 7, 8, 10 & 11     |
 | Amazonlinux  |    2       | 7 & 8             |
 | Amazonlinux  |    1       | 6, 7 & 8          |
 | Archlinux    | latest     | 7, 8, 11 & 14     |
@@ -153,7 +153,7 @@ Openjdk version compatibility operating system:
 | SLES         |   12       | 8                 |
 | Solaris      |   11       | 6, 7 ,8           |
 | Solaris      |   10       | 7, 8              |
-| Ubuntu       |  20.04     | 8 & 11            |
+| Ubuntu       |  20.04     | 8, 11, 13 & 14    |
 | Ubuntu       |  18.04     | 8 & 11            |
 | Ubuntu       |  16.04     | 8 & 9             |
 | Ubuntu       |  14.04     | 6 & 7             |
