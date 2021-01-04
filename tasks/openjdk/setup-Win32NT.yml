@@ -8,4 +8,4 @@
 
 - name: Windows | Ensure java is on the glboal path
   win_path:
-    elements: 'C:\Program Files\OpenJDK\jdk-11.0.1\bin'
+    elements: 'C:\Program Files\OpenJDK\jdk-15.0.1\bin'
