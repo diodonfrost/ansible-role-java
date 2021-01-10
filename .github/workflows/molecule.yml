@@ -106,7 +106,7 @@ jobs:
           - {image: "opensuse:15", java_version: "10"}
           - {image: "opensuse:15", java_version: "8"}
           - {image: "archlinux:latest", java_version: "latest"}
-          - {image: "archlinux:latest", java_version: "14"}
+          - {image: "archlinux:latest", java_version: "15"}
           - {image: "archlinux:latest", java_version: "11"}
           - {image: "archlinux:latest", java_version: "8"}
           - {image: "archlinux:latest", java_version: "7"}
