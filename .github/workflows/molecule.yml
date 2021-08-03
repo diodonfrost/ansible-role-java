@@ -90,7 +90,6 @@ jobs:
           - {image: "opensuse:leap", java_version: "11"}
           - {image: "opensuse:tumbleweed", java_version: "latest"}
           - {image: "opensuse:tumbleweed", java_version: "15"}
-          - {image: "opensuse:tumbleweed", java_version: "14"}
           - {image: "opensuse:tumbleweed", java_version: "8"}
           - {image: "opensuse:15.1", java_version: "latest"}
           - {image: "opensuse:15.1", java_version: "11"}
