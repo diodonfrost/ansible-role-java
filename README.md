@@ -116,7 +116,7 @@ Openjdk version compatibility operating system:
 | Alpinelinux  |   latest   | 7, 8, 10 & 11     |
 | Amazonlinux  |    2       | 7 & 8             |
 | Amazonlinux  |    1       | 6, 7 & 8          |
-| Archlinux    | latest     | 7, 8, 11 & 15     |
+| Archlinux    | latest     | 7, 8, 11 & 17     |
 | CentOS       |    8       | 8 & 11            |
 | CentOS       |    7       | 6, 7 & 8          |
 | CentOS       |    6       | 6, 7 & 8          |
