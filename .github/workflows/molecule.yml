@@ -16,44 +16,33 @@ jobs:
       fail-fast: false
       matrix:
         molecule:
-          - {image: "centos:8", java_version: "latest"}
-          - {image: "centos:8", java_version: "11"}
-          - {image: "centos:8", java_version: "8"}
+          - {image: "centos:stream9", java_version: "latest"}
+          - {image: "centos:stream9", java_version: "11"}
+          - {image: "centos:stream9", java_version: "8"}
+          - {image: "centos:stream8", java_version: "latest"}
+          - {image: "centos:stream8", java_version: "11"}
+          - {image: "centos:stream8", java_version: "8"}
           - {image: "centos:7", java_version: "latest"}
           - {image: "centos:7", java_version: "8"}
           - {image: "centos:7", java_version: "7"}
-          - {image: "centos:6", java_version: "latest"}
-          - {image: "centos:6", java_version: "8"}
-          - {image: "centos:6", java_version: "7"}
-          - {image: "centos:6", java_version: "6"}
+          - {image: "fedora:38", java_version: "latest"}
+          - {image: "fedora:38", java_version: "17"}
+          - {image: "fedora:37", java_version: "latest"}
+          - {image: "fedora:37", java_version: "17"}
+          - {image: "fedora:36", java_version: "latest"}
+          - {image: "fedora:36", java_version: "17"}
+          - {image: "fedora:35", java_version: "latest"}
+          - {image: "fedora:35", java_version: "17"}
+          - {image: "fedora:34", java_version: "latest"}
+          - {image: "fedora:34", java_version: "17"}
           - {image: "fedora:33", java_version: "latest"}
-          - {image: "fedora:33", java_version: "15"}
+          - {image: "fedora:33", java_version: "17"}
           - {image: "fedora:33", java_version: "11"}
           - {image: "fedora:33", java_version: "8"}
-          - {image: "fedora:32", java_version: "latest"}
-          - {image: "fedora:32", java_version: "13"}
-          - {image: "fedora:32", java_version: "11"}
-          - {image: "fedora:32", java_version: "8"}
-          - {image: "fedora:31", java_version: "latest"}
-          - {image: "fedora:31", java_version: "13"}
-          - {image: "fedora:31", java_version: "11"}
-          - {image: "fedora:31", java_version: "8"}
-          - {image: "fedora:30", java_version: "latest"}
-          - {image: "fedora:30", java_version: "12"}
-          - {image: "fedora:30", java_version: "11"}
-          - {image: "fedora:30", java_version: "8"}
-          - {image: "fedora:29", java_version: "latest"}
-          - {image: "fedora:29", java_version: "11"}
-          - {image: "fedora:29", java_version: "8"}
-          - {image: "fedora:28", java_version: "latest"}
-          - {image: "fedora:28", java_version: "11"}
-          - {image: "fedora:28", java_version: "8"}
-          - {image: "fedora:27", java_version: "latest"}
-          - {image: "fedora:27", java_version: "9"}
-          - {image: "fedora:27", java_version: "8"}
-          - {image: "fedora:26", java_version: "latest"}
-          - {image: "fedora:26", java_version: "9"}
-          - {image: "fedora:26", java_version: "8"}
+          - {image: "ubuntu:22.04", java_version: "latest"}
+          - {image: "ubuntu:22.04", java_version: "17"}
+          - {image: "ubuntu:22.04", java_version: "11"}
+          - {image: "ubuntu:22.04", java_version: "8"}
           - {image: "ubuntu:20.04", java_version: "latest"}
           - {image: "ubuntu:20.04", java_version: "17"}
           - {image: "ubuntu:20.04", java_version: "16"}
@@ -63,13 +52,9 @@ jobs:
           - {image: "ubuntu:18.04", java_version: "latest"}
           - {image: "ubuntu:18.04", java_version: "11"}
           - {image: "ubuntu:18.04", java_version: "8"}
-          - {image: "ubuntu:16.04", java_version: "latest"}
-          - {image: "ubuntu:16.04", java_version: "9"}
-          - {image: "ubuntu:16.04", java_version: "8"}
+          - {image: "debian:11", java_version: "latest"}
+          - {image: "debian:11", java_version: "11"}
           - {image: "debian:10", java_version: "latest"}
-          - {image: "debian:10", java_version: "11"}
-          - {image: "debian:8", java_version: "latest"}
-          - {image: "debian:8", java_version: "7"}
           - {image: "oraclelinux:8", java_version: "latest"}
           - {image: "oraclelinux:8", java_version: "11"}
           - {image: "oraclelinux:8", java_version: "8"}
@@ -77,36 +62,19 @@ jobs:
           - {image: "oraclelinux:7", java_version: "11"}
           - {image: "oraclelinux:7", java_version: "8"}
           - {image: "oraclelinux:7", java_version: "7"}
-          - {image: "oraclelinux:6", java_version: "latest"}
-          - {image: "oraclelinux:6", java_version: "8"}
-          - {image: "oraclelinux:6", java_version: "7"}
-          - {image: "oraclelinux:6", java_version: "6"}
+          - {image: "amazonlinux:2023", java_version: "latest"}
+          - {image: "amazonlinux:2023", java_version: "17"}
+          - {image: "amazonlinux:2023", java_version: "11"}
           - {image: "amazonlinux:2", java_version: "latest"}
-          - {image: "amazonlinux:2", java_version: "8"}
-          - {image: "amazonlinux:2", java_version: "7"}
-          - {image: "amazonlinux:1", java_version: "latest"}
-          - {image: "amazonlinux:1", java_version: "8"}
-          - {image: "amazonlinux:1", java_version: "7"}
-          - {image: "amazonlinux:1", java_version: "6"}
+          - {image: "amazonlinux:2", java_version: "17"}
+          - {image: "amazonlinux:2", java_version: "11"}
           - {image: "opensuse:leap", java_version: "latest"}
           - {image: "opensuse:leap", java_version: "8"}
           - {image: "opensuse:leap", java_version: "11"}
-          - {image: "opensuse:tumbleweed", java_version: "latest"}
-          - {image: "opensuse:tumbleweed", java_version: "15"}
-          - {image: "opensuse:tumbleweed", java_version: "8"}
-          - {image: "opensuse:15.1", java_version: "latest"}
-          - {image: "opensuse:15.1", java_version: "11"}
-          - {image: "opensuse:15.1", java_version: "10"}
-          - {image: "opensuse:15.1", java_version: "8"}
-          - {image: "opensuse:15", java_version: "latest"}
-          - {image: "opensuse:15", java_version: "11"}
-          - {image: "opensuse:15", java_version: "10"}
-          - {image: "opensuse:15", java_version: "8"}
           - {image: "archlinux:latest", java_version: "latest"}
           - {image: "archlinux:latest", java_version: "17"}
           - {image: "archlinux:latest", java_version: "11"}
           - {image: "archlinux:latest", java_version: "8"}
-          - {image: "archlinux:latest", java_version: "7"}
           - {image: "alpine:latest", java_version: "latest"}
           - {image: "alpine:latest", java_version: "11"}
           - {image: "alpine:latest", java_version: "10"}
