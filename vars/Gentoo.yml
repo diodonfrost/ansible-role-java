@@ -1,7 +1,7 @@
 ---
 # Define java version to use
 openjre_package: '{%- if java_version == "latest" -%}
-                     virtual/jre:1.8
+                     virtual/jre
                   {%- elif java_version|int == 8 -%}
                      virtual/jre:1.8
                   {%- else -%}
@@ -10,7 +10,7 @@ openjre_package: '{%- if java_version == "latest" -%}
 
 # Define java version to use
 openjdk_package: '{%- if java_version == "latest" -%}
-                     virtual/jdk:1.8
+                     virtual/jdk
                   {%- elif java_version|int == 8 -%}
                      virtual/jdk:1.8
                   {%- else -%}

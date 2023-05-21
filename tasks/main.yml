@@ -2,12 +2,14 @@
 # tasks file for ansible-role-java
 
 - name: Linux/Unix | Include OS specific variables.
-  include_vars: "{{ ansible_distribution }}.yml"
-  when: ansible_system != "Win32NT"
-
-- name: Windows | Include OS specific variables.
-  include_vars: "{{ ansible_system }}.yml"
-  when: ansible_system == "Win32NT"
+  include_vars: "{{ lookup('ansible.builtin.first_found', params) }}"
+  vars:
+    params:
+      files:
+        - "{{ ansible_distribution }}.yml"
+        - main.yml
+      paths:
+        - 'vars'
 
 - name: Install openjdk
   include_tasks: "openjdk/setup-{{ ansible_system }}.yml"

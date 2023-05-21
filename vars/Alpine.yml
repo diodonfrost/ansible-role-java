@@ -1,6 +1,6 @@
 ---
 openjre_package: '{%- if java_version == "latest" -%}
-                     openjdk11-jre-headless
+                     openjdk16-jre-headless
                   {%- elif java_version|int <= 8 -%}
                      openjdk{{ java_version }}-jre-base
                   {%- else -%}
@@ -8,7 +8,7 @@ openjre_package: '{%- if java_version == "latest" -%}
                   {%- endif -%}'
 
 openjdk_package: '{%- if java_version == "latest" -%}
-                     openjdk11-jdk
+                     openjdk16-jdk
                   {%- elif java_version|int <= 8 -%}
                      openjdk{{ java_version }}-jre-lib
                   {%- else -%}

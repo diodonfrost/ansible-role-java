@@ -1,12 +1,12 @@
 ---
 openjre_package: '{%- if java_version == "latest" -%}
-                     java-1.8.0-openjdk
+                     java-17-amazon-corretto
                   {%- else -%}
-                     java-1.{{ java_version }}.0-openjdk
+                     java-{{ java_version }}-amazon-corretto
                   {%- endif -%}'
 
 openjdk_package: '{%- if java_version == "latest" -%}
-                     java-1.8.0-openjdk-devel
+                     java-17-amazon-corretto
                   {%- else -%}
-                     java-1.{{ java_version }}.0-openjdk-devel
+                     java-{{ java_version }}-amazon-corretto
                   {%- endif -%}'
