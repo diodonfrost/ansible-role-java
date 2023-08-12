@@ -12,8 +12,6 @@ platforms:
     cgroupns_mode: host
     privileged: yes
     pre_build_image: yes
-    env:
-      java_version: "${java_version:-latest}"
 provisioner:
   name: ansible
 verifier:
