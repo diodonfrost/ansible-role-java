@@ -1,10 +1,5 @@
 ---
 - name: Converge
   hosts: all
-  become: yes
-  tasks:
-    - name: "Include ansible-role-java"
-      include_role:
-        name: "ansible-role-java"
-      vars:
-        java_version: "{{ ansible_env.java_version | default('latest') }}"
+  roles:
+    - role: diodonfrost.java

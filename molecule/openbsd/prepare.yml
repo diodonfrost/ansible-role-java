@@ -1,13 +1,8 @@
 ---
 - name: Prepare
   hosts: all
-  become: yes
-  gather_facts: no
+  become: true
+  gather_facts: false
   tasks:
-    - name: OpenBSD | Install Python
-      raw: |
-        OPENBSD_VERSION=`uname -a | awk -F " " '{print $3}'`
-        wget -P /tmp https://ftp.openbsd.org/pub/OpenBSD/${OPENBSD_VERSION}/amd64/xbase64.tgz
-        cd / && tar xzvphf /tmp/xbase64.tgz
-        pkg_add -z ansible
-        ln -s /usr/local/bin/python2.7 /usr/bin/python
+    - name: OpenBSD | Install Ansible requirements
+      ansible.builtin.raw: pkg_add -z "python%3" unzip--
