@@ -2,7 +2,7 @@
 # tasks file for ansible-role-java
 
 - name: Linux/Unix | Include OS specific variables.
-  include_vars: "{{ lookup('ansible.builtin.first_found', params) }}"
+  ansible.builtin.include_vars: "{{ lookup('ansible.builtin.first_found', params) }}"
   vars:
     params:
       files:
@@ -12,4 +12,4 @@
         - 'vars'
 
 - name: Install openjdk
-  include_tasks: "openjdk/setup-{{ ansible_system }}.yml"
+  ansible.builtin.include_tasks: "openjdk/setup-{{ ansible_system }}.yml"

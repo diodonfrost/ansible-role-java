@@ -2,14 +2,14 @@
 # tasks file for install openjdk for Macosx
 
 - name: Darwin | List users
-  shell: |
+  ansible.builtin.shell: |
     set -o pipefail
     ls -1 /Users/ |grep -v Shared |grep -v .localized
   register: list_users
   changed_when: false
 
 - name: Darwin | Adoptopenjdk homebrew repository
-  homebrew_tap:
+  community.general.homebrew_tap:
     name: AdoptOpenJDK/openjdk
     state: present
   become: yes
@@ -17,7 +17,7 @@
   with_items: "{{ list_users.stdout_lines }}"
 
 - name: Darwin | Install openjdk
-  homebrew_cask:
+  community.general.homebrew_cask:
     name: "{{ openjdk_package }}"
     state: present
   become: yes

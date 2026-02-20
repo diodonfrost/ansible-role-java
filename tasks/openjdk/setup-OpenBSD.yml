@@ -2,19 +2,19 @@
 # tasks file for install openjdk for OpenBSD
 
 - name: OpenBSD | Install openjre
-  package:
+  ansible.builtin.package:
     name: "{{ openjre_package }}"
     state: present
   when: openjre_install|bool
 
 - name: OpenBSD | Install openjdk
-  package:
+  ansible.builtin.package:
     name: "{{ openjdk_package }}"
     state: present
   when: openjdk_install|bool
 
 - name: OpenBSD | Set Java binary in /usr/local
-  file:
+  ansible.builtin.file:
     src: /usr/local/jre-1.8.0/bin/java
     dest: /usr/bin/java
     state: link

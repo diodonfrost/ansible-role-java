@@ -5,13 +5,13 @@
   block:
 
   - name: Solaris 11 | Install openjre
-    package:
+    ansible.builtin.package:
       name: "{{ openjre_package }}"
       state: present
     when: openjre_install|bool
 
   - name: Solaris 11 | Install openjdk
-    package:
+    ansible.builtin.package:
       name: "{{ openjdk_package }}"
       state: present
     when: openjdk_install|bool
@@ -22,19 +22,19 @@
   block:
 
   - name: Solaris 10 | Install openjre
-    pkgutil:
+    community.general.pkgutil:
       name: "{{ openjre_package }}"
       state: present
     when: openjre_install|bool
 
   - name: Solaris 10 | Install openjdk
-    pkgutil:
+    community.general.pkgutil:
       name: "{{ openjdk_package }}"
       state: present
     when: openjdk_install|bool
 
   - name: Solaris 10 | Add java binary to path
-    file:
+    ansible.builtin.file:
       src: "/opt/csw/java/jre/jre{{ java_version }}/bin/java"
       dest: "/bin/java"
       state: link

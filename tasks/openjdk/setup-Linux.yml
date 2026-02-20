@@ -2,35 +2,35 @@
 # tasks file for install openjdk for Linux
 
 - name: Debian | Update apt cache
-  apt:
+  ansible.builtin.apt:
     update_cache: yes
   changed_when: false
   when: ansible_os_family == "Debian"
 
 - name: Archlinux | Update pacman cache
-  pacman:
+  community.general.pacman:
     update_cache: yes
   changed_when: false
   when: ansible_os_family == "Archlinux"
 
 - name: Suse | Update emerge cache
-  command: zypper refresh
+  ansible.builtin.command: zypper refresh
   changed_when: false
   when: ansible_os_family == "Suse"
 
 - name: Gentoo | Update emerge cache
-  command: emerge-webrsync
+  ansible.builtin.command: emerge-webrsync
   changed_when: false
   when: ansible_os_family == "Gentoo"
 
 - name: Linux | Install openjre
-  package:
+  ansible.builtin.package:
     name: "{{ openjre_package }}"
     state: present
   when: openjre_install|bool
 
 - name: Linux | Install openjdk
-  package:
+  ansible.builtin.package:
     name: "{{ openjdk_package }}"
     state: present
   when: openjdk_install|bool
